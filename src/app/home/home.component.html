@@ -1,0 +1,13 @@
+<div class="main">
+    <button (click)="selectRole('top')">TOP</button>
+    <button (click)="selectRole('mid')">MID</button><br>
+    <button (click)="selectDifficulty(2)">Beginner</button>
+    <button (click)="selectDifficulty(5)">Intermediate</button>
+
+    <br>
+    <h4>Role: {{selected.role}}</h4>
+    <h4>Difficulty: {{selected.difficulty}}</h4>
+    <br>
+
+    <button (click)="begin()"><b>BEGIN</b></button>
+</div>

@@ -1,0 +1,16 @@
+<h5>{{role}}</h5>
+<h5>Stage: {{stage}} </h5>
+<!-- <h2 *ngFor="let champion of mainChampions"></h2> -->
+<h3>{{currentChampion?.name}}</h3>
+<h2>{{currentChampion?.skill.name}}</h2>
+
+<br>
+
+<div *ngFor="let champion of lane;" style="display:inline-block">
+    <img src="../assets/data/img/{{champion?.name}}.png">
+</div>
+
+<br>
+<br>
+
+<button (click)="nextStage()">Next stage</button>

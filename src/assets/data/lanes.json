@@ -1,0 +1,76 @@
+{
+    "lanes": {
+        "top": [
+            {
+                "name": "Yorick",
+                "83": "Yorick"
+            },
+            {
+                "name": "Yuumi",
+                "350": "Yuumi"
+            },
+            {
+                "name": "Zac",
+                "154": "Zac"
+            },
+            {
+                "name": "Zed",
+                "238": "Zed"
+            },
+            {
+                "name": "Ziggs",
+                "115": "Ziggs"
+            },
+            {
+                "name": "Zilean",
+                "26": "Zilean"
+            },
+            {
+                "name": "Zoe",
+                "142": "Zoe"
+            },
+            {
+                "name": "Zyra",
+                "143": "Zyra"
+            }
+        ],
+        "mid": [
+            {
+                "name": "Teemo",
+                "17": "Teemo"
+            },
+            {
+                "name": "Thresh",
+                "412": "Thresh"
+            },
+            {
+                "name": "Tristana",
+                "18": "Tristana"
+            },
+            {
+                "name": "Trundle",
+                "48": "Trundle"
+            },
+            {
+                "name": "Tryndamere",
+                "23": "Tryndamere"
+            },
+            {
+                "name": "TwistedFate",
+                "4": "TwistedFate"
+            },
+            {
+                "name": "Twitch",
+                "29": "Twitch"
+            },
+            {
+                "name": "Udyr",
+                "77": "Udyr"
+            },
+            {
+                "name": "Urgot",
+                "6": "Urgot"
+            }
+        ]
+    }
+}
