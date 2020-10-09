@@ -1,16 +1,23 @@
 <h5>{{role}}</h5>
-<h5>Stage: {{stage}} </h5>
+<h5>Stage: {{stage + 1}} </h5>
+<h5>Score: {{score}}</h5>
 <!-- <h2 *ngFor="let champion of mainChampions"></h2> -->
-<h3>{{currentChampion?.name}}</h3>
-<h2>{{currentChampion?.skill.name}}</h2>
+<!-- <h3>{{currentChampion?.name}}</h3> -->
+<h2>{{currentChampion?.skill?.description}}</h2>
 
 <br>
 
-<div *ngFor="let champion of lane;" style="display:inline-block">
-    <img src="../assets/data/img/{{champion?.name}}.png">
+<div *ngFor="let champion of mainChampions.selected;" style="display:inline-block">
+    <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"
+        [ngClass]="{ 'active': champion.name == user.selected }">
 </div>
 
 <br>
 <br>
 
-<button (click)="nextStage()">Next stage</button>
+<button style="padding:50px;" (click)="verify()">Next stage</button>
+
+<div *ngIf="stage == (difficulty * 4)">
+    <h1>COMPLETED IT MATE</h1>
+    <h2>{{score}} / {{difficulty * 4}}</h2>
+</div>

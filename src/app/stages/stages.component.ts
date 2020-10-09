@@ -27,9 +27,12 @@ export class StagesComponent {
     stage = 0;
     lane = {}
     loading = true;
+    answer = false;
+    score = 0;
 
+    user = { selected: {} }
     mainChampions = { selected: [], files: [] };
-    currentChampion = { name: "", skill: "" }
+    currentChampion = { name: "", skill: "", keyRef: "" }
 
     ngOnInit() {
         this.stage = 0;
@@ -38,21 +41,34 @@ export class StagesComponent {
         this.findChampions();
 
         if (this.mainChampions.files[0]) {
-
             console.log(this.mainChampions);
         }
+    }
+
+    shuffle(entry) {
+        var length = entry.length, randomValue = 0, tempLastVal;
+        while (length--) {
+            randomValue = Math.floor(Math.random() * (length + 1));
+
+            tempLastVal = entry[length];
+            entry[length] = entry[randomValue];
+            entry[randomValue] = tempLastVal;
+        }
+        return entry;
     }
 
     async findChampions() {
         console.log(this.loading);
 
-        for (let i = 0; i < this.difficulty; i++) {
-            //Length of required champions depending on difficulty
-            let entry = lanes.lanes[this.role];
+        let entry = lanes.lanes[this.role];
 
+        // Randomise entry array
+        this.shuffle(entry);
+
+
+        for (let i = 0; i < this.difficulty; i++) {
             //Get random champions to length of difficulty
-            let key = Object.keys(entry)[Math.floor(Math.random() * entry.length)]
-            this.mainChampions.selected.push(entry[key]);
+            this.mainChampions.selected.push(entry[i]);
 
             //Assign skill used template into array
             this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate]
@@ -84,7 +100,6 @@ export class StagesComponent {
         return new Promise((resolve, reject) => {
             this.mainChampions.files.push(data);
             if (this.mainChampions.files[pos]) {
-                console.log("YAY");
                 resolve();
             } else {
                 setTimeout(() => {
@@ -95,16 +110,22 @@ export class StagesComponent {
     }
 
     async stageSkill() {
+
+        //If all stages have been completed
+        // if (this.stage == (this.difficulty * 4)) {
+        //     this.router.navigate(['/']);
+        // }
+
         // Get random champion index
         let entry = this.mainChampions.selected;
         let championKey = Object.keys(entry)[Math.floor(Math.random() * entry.length)];
-        console.log(entry.length)
 
         //Set current champion based off index
         this.currentChampion.name = this.mainChampions.selected[championKey].name;
+        //Set index as a reference to check against
+        this.currentChampion.keyRef = championKey;
 
-        console.log("Champion name:" + this.currentChampion.name)
-        console.log("Champion key:" + championKey);
+        console.log("%c CHAMPION: ", 'background: blue', this.currentChampion.name + " KEY: " + championKey);
 
         // Get skill index
         this.getSkillIndex(championKey);
@@ -112,34 +133,53 @@ export class StagesComponent {
 
 
     getSkillIndex(champKey) {
-        console.log("Champion key in func:" + champKey)
-        let checker = arr => arr.every(index => index === true);
-
         // Random key between 0-3, check if key path has already been used
         let num = Math.floor(Math.random() * 4);
-        console.log("Skill key:" + num);
-        console.log(this.mainChampions.selected)
-        if (checker(this.mainChampions.selected[champKey].skillsUsed)) {
 
-            console.log("all true");
-            return false;
+        console.log("SKILL KEY: " + num)
 
-        } else if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
-            //Set index path for skill to true
+        if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
+            console.log(this.mainChampions.files[champKey]);
+
+            //Set skill history to used
             this.mainChampions.selected[champKey].skillsUsed[num] = true;
-            //Assign skill to current champion values
+            //Set current champion skill
             this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num];
-
-
-            console.log(this.mainChampions.selected[champKey].skillsUsed);
 
             return num;
         } else {
+            //Recursive function, rerun until index is false
             this.getSkillIndex(champKey);
         }
     }
 
+    checkSkillsUsed(arr, ref) {
+        //Checks if every item in array is set to true
+        if (arr.every(index => index === true)) {
+            this.mainChampions.selected.splice(ref, 1);
+            this.mainChampions.files.splice(ref, 1);
+            console.log('%c REMOVED CHAMPION ', 'background: red')
+        }
+    }
+
+    verify() {
+        if (this.user.selected == this.currentChampion.name) {
+            this.score++;
+            this.nextStage();
+        } else {
+            this.nextStage();
+        }
+    }
+
     nextStage() {
+        //Check to see if all skills have been used, if true, remove from selection.
+        this.checkSkillsUsed(this.mainChampions.selected[this.currentChampion.keyRef].skillsUsed, this.currentChampion.keyRef);
+
+        //Reset variables
+        this.currentChampion = { name: "", skill: "", keyRef: "" };
+        this.user.selected = {};
+        this.answer = false;
+
         this.stage++;
         this.stageSkill();
     }
