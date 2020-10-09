@@ -28,9 +28,8 @@ export class StagesComponent {
     lane = {}
     loading = true;
 
-    mainChampions = { selected: [], files: [], skillUsed: [] };
-    extraChampions = [];
-    currentChampion = { name: "", skill: [] }
+    mainChampions = { selected: [], files: [] };
+    currentChampion = { name: "", skill: "" }
 
     ngOnInit() {
         this.stage = 0;
@@ -56,7 +55,7 @@ export class StagesComponent {
             this.mainChampions.selected.push(entry[key]);
 
             //Assign skill used template into array
-            this.mainChampions.selected[i].skillsUsed = this.skillTemplate;
+            this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate]
 
             //Load champion data into files
             await this.loadChampion(i);
@@ -95,29 +94,45 @@ export class StagesComponent {
         })
     }
 
-    stageSkill() {
+    async stageSkill() {
         // Get random champion index
         let entry = this.mainChampions.selected;
         let championKey = Object.keys(entry)[Math.floor(Math.random() * entry.length)];
+        console.log(entry.length)
 
         //Set current champion based off index
         this.currentChampion.name = this.mainChampions.selected[championKey].name;
+
+        console.log("Champion name:" + this.currentChampion.name)
+        console.log("Champion key:" + championKey);
 
         // Get skill index
         this.getSkillIndex(championKey);
     }
 
-    getSkillIndex(champKey) {
-        // Random key between 0-3, check if key path has already been used
-        let num = Math.floor(Math.random() * 3);
 
-        if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
-            //Assign skill to current champion values
-            this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num];
+    getSkillIndex(champKey) {
+        console.log("Champion key in func:" + champKey)
+        let checker = arr => arr.every(index => index === true);
+
+        // Random key between 0-3, check if key path has already been used
+        let num = Math.floor(Math.random() * 4);
+        console.log("Skill key:" + num);
+        console.log(this.mainChampions.selected)
+        if (checker(this.mainChampions.selected[champKey].skillsUsed)) {
+
+            console.log("all true");
+            return false;
+
+        } else if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
             //Set index path for skill to true
             this.mainChampions.selected[champKey].skillsUsed[num] = true;
+            //Assign skill to current champion values
+            this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num];
+
 
             console.log(this.mainChampions.selected[champKey].skillsUsed);
+
             return num;
         } else {
             this.getSkillIndex(champKey);
