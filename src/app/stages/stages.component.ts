@@ -30,7 +30,7 @@ export class StagesComponent {
     answer = false;
     score = 0;
 
-    user = { selected: {} }
+    user = { selected: '' }
     mainChampions = { selected: [], files: [] };
     currentChampion = { name: "", skill: "", keyRef: "" }
 
@@ -47,6 +47,7 @@ export class StagesComponent {
 
     shuffle(entry) {
         var length = entry.length, randomValue = 0, tempLastVal;
+
         while (length--) {
             randomValue = Math.floor(Math.random() * (length + 1));
 
@@ -54,6 +55,7 @@ export class StagesComponent {
             entry[length] = entry[randomValue];
             entry[randomValue] = tempLastVal;
         }
+
         return entry;
     }
 
@@ -64,7 +66,6 @@ export class StagesComponent {
 
         // Randomise entry array
         this.shuffle(entry);
-
 
         for (let i = 0; i < this.difficulty; i++) {
             //Get random champions to length of difficulty
@@ -110,10 +111,8 @@ export class StagesComponent {
     }
 
     async stageSkill() {
-
-        //If all stages have been completed
-        // if (this.stage == (this.difficulty * 4)) {
-        //     this.router.navigate(['/']);
+        // if (this.user.selected === '') {
+        //     console.log("NOTHING SELECTED");
         // }
 
         // Get random champion index
@@ -138,13 +137,15 @@ export class StagesComponent {
 
         console.log("SKILL KEY: " + num)
 
+
         if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
-            console.log(this.mainChampions.files[champKey]);
 
             //Set skill history to used
             this.mainChampions.selected[champKey].skillsUsed[num] = true;
             //Set current champion skill
-            this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num];
+            this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num].description;
+            console.log(this.currentChampion.skill);
+            this.currentChampion.skill = this.currentChampion.skill.split(this.currentChampion.name).join("<span>Champion</span>");
 
             return num;
         } else {
@@ -177,7 +178,7 @@ export class StagesComponent {
 
         //Reset variables
         this.currentChampion = { name: "", skill: "", keyRef: "" };
-        this.user.selected = {};
+        this.user.selected = '';
         this.answer = false;
 
         this.stage++;
