@@ -31,16 +31,37 @@ h1, h2, h3, h4, h5, p {
     border: 3px solid #C8AA6E;
 }
 
+header h1 {
+    font-size:5em;
+    margin-bottom:0px;
+}
+
+h2 {
+    font-size:2.75em;
+}
+
+h3 {
+    font-size:2.5em;
+    margin-bottom:0px;
+    color:black;
+    -webkit-text-stroke: 1px #C8AA6E;
+    margin-bottom: -20px;
+    margin-left: 20px;
+    background-color: black;
+}
+
 button {
     background-color:transparent;
     color:#C8AA6E;
     border:1px solid #C8AA6E;
     padding:10px 40px;
 }
+button:focus {outline:none;}
 
 button:hover, .selected {
     background-color:#C8AA6E;
     color:black;
+    cursor: pointer;
 }
 
 
@@ -50,11 +71,22 @@ button:hover, .selected {
     pointer-events: none;
 }
 
+.roles button img {
+    height:50px;
+    width:auto;
+}
+
+.roles button:hover img, .selected img{
+    -webkit-filter: brightness(0);
+  filter: brightness(0);
+}
+
+
 h2 span {
     background-color:#C8AA6E;
 }
 .centered-container {
-    width:100%;
+    width:100vw;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -63,5 +95,68 @@ h2 span {
 }
 
 .stage-container {
-    width:75%;
+    // margin: 0 auto;
+    max-width:50%;
 }
+.champions {
+    background-color:black;
+    box-sizing: border-box;
+    width:100%;
+    padding:20px;
+    border:1px solid #C8AA6E;
+}
+
+// LOADING
+
+.loading {
+    z-index:1000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:100vw;
+    height:100vh;
+    background-color:#000000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.loading-bro {
+    margin: 50px auto;
+    width: 150px;
+   
+  }
+  
+  #load {
+          width: 150px;
+      animation: loading 3s linear infinite;
+      #loading-inner {
+            stroke: {
+          dashoffset: 0;
+          dasharray: 300;
+          width: 10;
+          miterlimit: 10;
+          linecap: round;
+        }
+        animation: loading-circle 2s linear infinite;
+        stroke: #C8AA6E;
+        fill: transparent;
+      }
+      }
+  
+  @keyframes loading {
+          0% { 
+        transform: rotate(0); 
+      }
+          100% { 
+        transform: rotate(360deg);
+      }
+  }
+  @keyframes loading-circle {
+          0% { 
+        stroke-dashoffset: 0
+      }
+          100% { 
+        stroke-dashoffset: -600;
+      }
+  }

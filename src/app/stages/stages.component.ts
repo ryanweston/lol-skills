@@ -63,7 +63,7 @@ export class StagesComponent {
         console.log(this.loading);
 
         let entry = lanes.lanes[this.role];
-
+        console.log(entry);
         // Randomise entry array
         this.shuffle(entry);
 

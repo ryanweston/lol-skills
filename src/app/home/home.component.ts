@@ -5,6 +5,8 @@ import { Router, NavigationExtras } from '@angular/router';
 export class HomeComponent {
     title = 'lol-skills';
 
+    stage = 0;
+
     selected = { role: '', difficulty: '' }
 
     constructor(private router: Router) {
@@ -22,6 +24,10 @@ export class HomeComponent {
     selectDifficulty(diff) {
         this.selected.difficulty = diff;
         console.log(this.selected);
+    }
+
+    nextStage() {
+        this.stage++;
     }
 
     begin() {

@@ -2,36 +2,166 @@
     "lanes": {
         "top": [
             {
-                "name": "Yorick",
-                "83": "Yorick"
+                "name": "Yorick"
             },
             {
-                "name": "Yuumi",
-                "350": "Yuumi"
+                "name": "Lulu"
             },
             {
-                "name": "Zac",
-                "154": "Zac"
+                "name": "Darius"
             },
             {
-                "name": "Zed",
-                "238": "Zed"
+                "name": "Fiora"
             },
             {
-                "name": "Ziggs",
-                "115": "Ziggs"
+                "name": "Camille"
             },
             {
-                "name": "Zilean",
-                "26": "Zilean"
+                "name": "Maokai"
             },
             {
-                "name": "Zoe",
-                "142": "Zoe"
+                "name": "Darius"
             },
             {
-                "name": "Zyra",
-                "143": "Zyra"
+                "name": "Hecarim"
+            },
+            {
+                "name": "Renekton"
+            },
+            {
+                "name": "Malphite"
+            },
+            {
+                "name": "Volibear"
+            },
+            {
+                "name": "Quinn"
+            },
+            {
+                "name": "Poppy"
+            },
+            {
+                "name": "Jax"
+            },
+            {
+                "name": "Shen"
+            },
+            {
+                "name": "Irelia"
+            },
+            {
+                "name": "Rengar"
+            },
+            {
+                "name": "Garen"
+            },
+            {
+                "name": "MonkeyKing"
+            },
+            {
+                "name": "Cassiopeia"
+            },
+            {
+                "name": "Sett"
+            },
+            {
+                "name": "Sylas"
+            },
+            {
+                "name": "Akali"
+            },
+            {
+                "name": "Aatrox"
+            },
+            {
+                "name": "Ornn"
+            },
+            {
+                "name": "Kayle"
+            },
+            {
+                "name": "Vladimir"
+            },
+            {
+                "name": "Teemo"
+            },
+            {
+                "name": "Lucian"
+            },
+            {
+                "name": "Zac"
+            },
+            {
+                "name": "Vayne"
+            },
+            {
+                "name": "Mordekaiser"
+            },
+            {
+                "name": "Jayce"
+            },
+            {
+                "name": "Kled"
+            },
+            {
+                "name": "Illaoi"
+            },
+            {
+                "name": "Gangplank"
+            },
+            {
+                "name": "Sion"
+            },
+            {
+                "name": "Nasus"
+            },
+            {
+                "name": "Kennen"
+            },
+            {
+                "name": "Olaf"
+            },
+            {
+                "name": "Riven"
+            },
+            {
+                "name": "Singed"
+            },
+            {
+                "name": "Yasuo"
+            },
+            {
+                "name": "Heimerdinger"
+            },
+            {
+                "name": "Yone"
+            },
+            {
+                "name": "Rumble"
+            },
+            {
+                "name": "Chogath"
+            },
+            {
+                "name": "Ryze"
+            },
+            {
+                "name": "Tryndamere"
+            },
+            {
+                "name": "Urgot"
+            },
+            {
+                "name": "Gnar"
+            },
+            {
+                "name": "Warwick"
+            },
+            {
+                "name": "DrMundo"
+            },
+            {
+                "name": "Kalista"
             }
         ],
         "mid": [

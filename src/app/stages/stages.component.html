@@ -1,30 +1,41 @@
-<div class="stage-container">
-    <!-- If not completed  -->
-    <div *ngIf="stage != (difficulty * 4)">
-        <!-- <h5>{{role}}</h5> -->
-        <p>Stage: {{stage + 1}} | Score: {{score}}</p>
-        <!-- <h3>{{currentChampion?.name}}</h3> -->
-        <h2 [innerHTML]="currentChampion?.skill"></h2>
+<div class="centered-container">
+    <div class="stage-container">
+        <!-- If not completed  -->
+        <div *ngIf="stage != (difficulty * 4)">
+            <p>Stage: {{stage + 1}} | Score: {{score}}</p>
+            <h2 [innerHTML]="currentChampion?.skill"></h2>
 
-        <div *ngFor="let champion of mainChampions.selected;" style="display:inline-block">
-            <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"
-                [ngClass]="{ 'active': champion.name == user.selected }">
+            <h3>Pick the correct champion</h3>
+            <div class="champions">
+                <div *ngFor="let champion of mainChampions.selected;" style="display:inline-block">
+                    <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"
+                        [ngClass]="{ 'active': champion.name == user.selected }">
+                </div>
+            </div>
+            <br>
+
+            <button (click)="verify()" [ngClass]="{ 'disabled-btn': !user.selected }">Next
+                stage</button>
         </div>
 
-        <br>
+        <!-- If completed -->
+        <div *ngIf="stage == (difficulty * 4)">
+            <h1>COMPLETED IT MATE</h1>
+            <h2>{{score}} / {{difficulty * 4}}</h2>
+            <br>
+            <button routerLink="/">
+                <!-- ADD RESETS TO SEPERATE FUNCTION -->
+                <p>BACK TO HOME</p>
+            </button>
+        </div>
 
-        <button (click)="verify()" [ngClass]="{ 'disabled-btn': !user.selected }">Next
-            stage</button>
-    </div>
+        <div *ngIf="loading == true" class="loading">
+            <div class="loading-bro">
+                <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+                    <circle id="loading-inner" cx="75" cy="75" r="60" />
+                </svg>
+            </div>
+        </div>
 
-    <!-- If completed -->
-    <div *ngIf="stage == (difficulty * 4)">
-        <h1>COMPLETED IT MATE</h1>
-        <h2>{{score}} / {{difficulty * 4}}</h2>
-        <br>
-        <button routerLink="/">
-            <!-- ADD RESETS TO SEPERATE FUNCTION -->
-            <p>BACK TO HOME</p>
-        </button>
     </div>
 </div>
