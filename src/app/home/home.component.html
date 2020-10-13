@@ -1,36 +1,29 @@
 <div class="centered-container">
-
-    <div *ngIf="stage == 0">
-        <header>
-            <h1>CHOOSE YOUR ROLE</h1><br>
-        </header>
-        <div class="main">
-            <div class="roles">
-                <button (click)="selectRole('top')" [ngClass]="{'selected': selected.role == 'top'}"><img
-                        src="../assets/data/img/roles/top.png"></button>
-                <button (click)="selectRole('jng')" [ngClass]="{'selected': selected.role == 'jng'}"><img
-                        src="../assets/data/img/roles/jng.png"></button>
-                <button (click)="selectRole('mid')" [ngClass]="{'selected': selected.role == 'mid'}"><img
-                        src="../assets/data/img/roles/mid.png"></button>
-                <button (click)="selectRole('adc')" [ngClass]="{'selected': selected.role == 'adc'}"><img
-                        src="../assets/data/img/roles/adc.png"></button>
-                <button class="last" (click)="selectRole('sup')" [ngClass]="{'selected': selected.role == 'sup'}"><img
-                        src="../assets/data/img/roles/supp.png"></button>
-                <br>
-            </div>
-
-            <br>
-            <!-- <h4>Role: {{selected.role}}</h4>
-        <h4>Difficulty: {{selected.difficulty}}</h4>
-        <br> -->
-
-            <button class="next" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
-                [disabled]="!selected.role">START<br>LEARNING<br>
-                <span>>></span></button>
+    <header>
+        <h1>CHOOSE YOUR ROLE</h1><br>
+    </header>
+    <div class="main">
+        <div class="roles">
+            <button (click)="selectRole('top')" [ngClass]="{'selected': selected.role == 'top'}"><img
+                    src="../assets/data/img/roles/top.png"></button>
+            <button (click)="selectRole('jng')" [ngClass]="{'selected': selected.role == 'jng'}"><img
+                    src="../assets/data/img/roles/jng.png"></button>
+            <button (click)="selectRole('mid')" [ngClass]="{'selected': selected.role == 'mid'}"><img
+                    src="../assets/data/img/roles/mid.png"></button>
+            <button (click)="selectRole('adc')" [ngClass]="{'selected': selected.role == 'adc'}"><img
+                    src="../assets/data/img/roles/adc.png"></button>
+            <button class="last" (click)="selectRole('sup')" [ngClass]="{'selected': selected.role == 'sup'}"><img
+                    src="../assets/data/img/roles/supp.png"></button>
         </div>
-    </div>
 
-    <div *ngIf="stage == 1">
+        <button class="next" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
+            [disabled]="!selected.role">START<br>LEARNING<br>
+            <span>>></span></button>
+    </div>
+</div>
+
+<!-- DIFFICULTY TEMPORARILY REMOVED -->
+<!-- <div *ngIf="stage == 1">
         <header>
             <h1>CHOOSE A<br> DIFFICULTY</h1>
         </header>
@@ -42,11 +35,6 @@
             <button (click)="selectDifficulty(15)"
                 [ngClass]="{'selected': selected.difficulty == '15'}">Experienced</button>
         </div>
-        <br>
-        <!-- <h4>Role: {{selected.role}}</h4>
-        <h4>Difficulty: {{selected.difficulty}}</h4>
-        <br> -->
-
+    
         <button class="next" (click)="begin()"><b>START<br>LEARNING<br> <span>>></span></b></button>
-    </div>
-</div>
+    </div> -->
