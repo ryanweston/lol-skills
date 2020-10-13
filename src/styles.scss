@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+/* FONTS */
 @font-face {
     font-family: Monument;
     src: url("/assets/fonts/MonumentGroteskTrial-Black.otf") format("OpenType");
@@ -17,6 +17,8 @@
     font-family: Monument;
 }
 
+
+// GLOBAL STYLES
 body {
     padding:0px;
     margin:0px;
@@ -27,19 +29,18 @@ h1, h2, h3, h4, h5, p {
     font-family: Monument;
     color:#C8AA6E;
 }
-.active {
-    border: 3px solid #C8AA6E;
-}
+
 
 header h1 {
-    font-size:5em;
-    margin-bottom:0px;
+    font-size:4em;
+    -webkit-text-stroke: 1px #C8AA6E;
+    color:black;
+    margin:0px;
+    line-height:97%;
 }
-
 h2 {
-    font-size:2.75em;
+    font-size:2em;
 }
-
 h3 {
     font-size:2.5em;
     margin-bottom:0px;
@@ -50,29 +51,82 @@ h3 {
     background-color: black;
 }
 
+.centered-container {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    padding:20px;
+    box-sizing:border-box;
+    position: relative;
+}
+
+
+
+button:focus {outline:none;}
 button {
     background-color:transparent;
     color:#C8AA6E;
     border:1px solid #C8AA6E;
     padding:10px 40px;
 }
-button:focus {outline:none;}
-
 button:hover, .selected {
+    border-radius:20px;
     background-color:#C8AA6E;
     color:black;
     cursor: pointer;
 }
-
-
 .disabled-btn {
     opacity:0.2;
     cursor: not-allowed;
     pointer-events: none;
 }
 
+// NEXT STAGE/NEXT BUTTON
+.next {
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    line-height:95%;
+    font-size:3em;
+    text-transform: uppercase;
+    border:0px;
+    padding:0px;
+    padding-right:30px;
+    padding-bottom:30px;
+    text-align:left;
+    font-weight:bold;
+}
+.next:hover {
+    background-color:transparent;
+    color:#C8AA6E;
+}
+.next:hover span {
+    float:right;
+}
+
+h2 span {
+    background-color:#C8AA6E;
+}
+
+// ROLES SELECTION
+.main {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.roles button {
+    padding:20px 30px;
+    border:0px;
+}
+.roles .last {
+    border-right:0px!important;
+}
+
 .roles button img {
-    height:50px;
+    height:75px;
     width:auto;
 }
 
@@ -82,32 +136,37 @@ button:hover, .selected {
 }
 
 
-h2 span {
-    background-color:#C8AA6E;
-}
-.centered-container {
-    width:100vw;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction: column;
-}
-
+// STAGE STYLES
 .stage-container {
-    // margin: 0 auto;
-    max-width:50%;
+    max-width:800px;
+}
+.stage {
+    position:absolute;
+    top:30px;
+    left:30px;
+    // background-color:#C8AA6E;
+}
+.stage h3 {
+    font-size:8em;
+    -webkit-text-stroke: 1px #C8AA6E;
+    color:black;
+    margin:0px;
+    background:transparent;
 }
 .champions {
     background-color:black;
     box-sizing: border-box;
-    width:100%;
     padding:20px;
     border:1px solid #C8AA6E;
 }
+.champions img {
+    border: 3px solid transparent;
+}
+.champions .active {
+    border: 3px solid #C8AA6E;
+}
 
-// LOADING
-
+// LOADING & SUCCESS/FAILURE INDICATORS
 .loading {
     z-index:1000;
     position: absolute;
@@ -120,14 +179,19 @@ h2 span {
     justify-content:center;
     align-items:center;
 }
-
 .loading-bro {
     margin: 50px auto;
     width: 150px;
-   
-  }
-  
-  #load {
+}
+.unactive {
+    display:none;
+}
+.success {
+    display:block!important;
+}
+
+// ANIMANIMATIONS
+#load {
           width: 150px;
       animation: loading 3s linear infinite;
       #loading-inner {
@@ -160,3 +224,12 @@ h2 span {
         stroke-dashoffset: -600;
       }
   }
+
+// UNUSED ****************************************************************
+.difficulty button {
+    border:0px;
+    font-size:1.3rem;
+    text-align:left;
+    padding:0px;
+    margin-top:15px;
+}

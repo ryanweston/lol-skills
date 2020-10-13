@@ -7,7 +7,7 @@ export class HomeComponent {
 
     stage = 0;
 
-    selected = { role: '', difficulty: '' }
+    selected = { role: '', difficulty: '6' }
 
     constructor(private router: Router) {
 
@@ -31,12 +31,7 @@ export class HomeComponent {
     }
 
     begin() {
-        //route to component with data inside url
-        //find amount of champions depending on selected.diff in role dependant on selected.selectRole
-        //import relevant files & reroute to next component
-
-        //load each champion individually, run fetch function each time next stage has activated, picking random skill
-        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6 } };
         this.router.navigate(['begin'], navigationExtras);
     }
 }

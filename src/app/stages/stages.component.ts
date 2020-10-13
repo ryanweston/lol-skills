@@ -27,7 +27,7 @@ export class StagesComponent {
     stage = 0;
     lane = {}
     loading = true;
-    answer = false;
+    answer = "false";
     score = 0;
 
     user = { selected: '' }
@@ -166,9 +166,16 @@ export class StagesComponent {
     verify() {
         if (this.user.selected == this.currentChampion.name) {
             this.score++;
-            this.nextStage();
+            this.answer = "correct";
+            setTimeout(() => {
+                this.nextStage();
+            }, 1000);
+
         } else {
-            this.nextStage();
+            this.answer = "false";
+            setTimeout(() => {
+                this.nextStage();
+            }, 1000);
         }
     }
 
@@ -179,7 +186,7 @@ export class StagesComponent {
         //Reset variables
         this.currentChampion = { name: "", skill: "", keyRef: "" };
         this.user.selected = '';
-        this.answer = false;
+        this.answer = "false";
 
         this.stage++;
         this.stageSkill();

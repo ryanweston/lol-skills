@@ -1,8 +1,13 @@
 <div class="centered-container">
     <div class="stage-container">
-        <!-- If not completed  -->
+
+        <!-- STAGE INDICATOR -->
+        <div class="stage">
+            <h3>{{stage + 1}}.</h3>
+        </div>
+
+        <!-- STAGE CONTENT -->
         <div *ngIf="stage != (difficulty * 4)">
-            <p>Stage: {{stage + 1}} | Score: {{score}}</p>
             <h2 [innerHTML]="currentChampion?.skill"></h2>
 
             <h3>Pick the correct champion</h3>
@@ -14,11 +19,12 @@
             </div>
             <br>
 
-            <button (click)="verify()" [ngClass]="{ 'disabled-btn': !user.selected }">Next
-                stage</button>
+            <button (click)="verify()" class="next" [ngClass]="{ 'disabled-btn': !user.selected }"
+                [disabled]="!user.selected">NEXT<br>STAGE<br>
+                <span>>></span></button>
         </div>
 
-        <!-- If completed -->
+        <!-- STAGE COMPLETION -->
         <div *ngIf="stage == (difficulty * 4)">
             <h1>COMPLETED IT MATE</h1>
             <h2>{{score}} / {{difficulty * 4}}</h2>
@@ -29,6 +35,17 @@
             </button>
         </div>
 
+        <!-- SUCCESS OR FAIL ANIMATION -->
+        <div class="loading unactive" [ngClass]="{'success': answer === 'correct' }">
+            <div class="loading-bro">
+                <h1>SUCCESS</h1>
+                <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
+                    <circle id="loading-inner" cx="75" cy="75" r="60" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- LOADING ANIMATION -->
         <div *ngIf="loading == true" class="loading">
             <div class="loading-bro">
                 <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
@@ -36,6 +53,8 @@
                 </svg>
             </div>
         </div>
+
+
 
     </div>
 </div>
