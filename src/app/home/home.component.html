@@ -1,40 +1,21 @@
 <div class="centered-container">
-    <header>
-        <h1>CHOOSE YOUR ROLE</h1><br>
-    </header>
-    <div class="main">
-        <div class="roles">
-            <button (click)="selectRole('top')" [ngClass]="{'selected': selected.role == 'top'}"><img
-                    src="../assets/data/img/roles/top.png"></button>
-            <button (click)="selectRole('jng')" [ngClass]="{'selected': selected.role == 'jng'}"><img
-                    src="../assets/data/img/roles/jng.png"></button>
-            <button (click)="selectRole('mid')" [ngClass]="{'selected': selected.role == 'mid'}"><img
-                    src="../assets/data/img/roles/mid.png"></button>
-            <button (click)="selectRole('adc')" [ngClass]="{'selected': selected.role == 'adc'}"><img
-                    src="../assets/data/img/roles/adc.png"></button>
-            <button class="last" (click)="selectRole('sup')" [ngClass]="{'selected': selected.role == 'sup'}"><img
-                    src="../assets/data/img/roles/supp.png"></button>
-        </div>
-
-        <button class="next" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
-            [disabled]="!selected.role">START<br>LEARNING<br>
-            <span>>></span></button>
+    <div class="bg-title">
+        <h1>LEARN LEAGUE</h1>
+        <h1 class="opacity">LEARN THE BASICS</h1>
     </div>
-</div>
 
-<!-- DIFFICULTY TEMPORARILY REMOVED -->
-<!-- <div *ngIf="stage == 1">
-        <header>
-            <h1>CHOOSE A<br> DIFFICULTY</h1>
-        </header>
-        <div class="difficulty">
-            <button (click)="selectDifficulty(2)"
-                [ngClass]="{'selected': selected.difficulty == '2'}">Beginner</button><br>
-            <button (click)="selectDifficulty(5)"
-                [ngClass]="{'selected': selected.difficulty == '5'}">Intermediate</button><br>
-            <button (click)="selectDifficulty(15)"
-                [ngClass]="{'selected': selected.difficulty == '15'}">Experienced</button>
+    <div class="menu">
+        <div class="menu-item">
+            <h2>CHAMPIONS</h2>
         </div>
-    
-        <button class="next" (click)="begin()"><b>START<br>LEARNING<br> <span>>></span></b></button>
-    </div> -->
+        <div class="menu-item">
+            <h2>SKILLS</h2>
+        </div>
+        <div class="menu-item">
+            <h2>ARTWORK</h2>
+        </div>
+    </div>
+    <button (click)="verify()" class="next" [ngClass]="{ 'disabled-btn': !user.selected }"
+        [disabled]="!user.selected">START <br> LEARNING<br>
+        <span>>></span></button>
+</div>

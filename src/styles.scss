@@ -51,6 +51,32 @@ h3 {
     background-color: black;
 }
 
+.bg-title { 
+    position:absolute;
+    top:20px;
+    left:20px;
+    margin:auto;
+    width:100vw;
+    height:100%;
+    h1 { 
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+        margin:0px;
+        line-height:85%;
+        font-size:15vw;
+        -webkit-text-stroke: 1px #C8AA6E;
+        color:transparent;
+    }
+    .opacity {
+        opacity:0.1;
+    }
+}
+
 .centered-container {
     width:100vw;
     height:100vh;
@@ -61,6 +87,18 @@ h3 {
     padding:20px;
     box-sizing:border-box;
     position: relative;
+    overflow:hidden;
+}
+
+.menu {
+    transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
+    .menu-item {
+        h2 {
+            font-size:4em;
+            margin:0px;
+            text-align:center;
+        }
+    }
 }
 
 
@@ -72,9 +110,10 @@ button {
     border:1px solid #C8AA6E;
     padding:10px 40px;
 }
-button:hover, .selected {
-    border-radius:20px;
-    background-color:#C8AA6E;
+button:hover, .roles .selected {
+    // border-radius:20px;
+    // background-color:#C8AA6E;
+    border:2px solid #C8AA6E!important;
     color:black;
     cursor: pointer;
 }
@@ -121,19 +160,19 @@ h2 span {
     padding:20px 30px;
     border:0px;
 }
-.roles .last {
-    border-right:0px!important;
-}
+// .roles .last {
+//     border-right:0px!important;
+// }
 
 .roles button img {
     height:75px;
     width:auto;
 }
 
-.roles button:hover img, .selected img{
-    -webkit-filter: brightness(0);
-  filter: brightness(0);
-}
+// .roles button:hover img, .selected img{
+//     -webkit-filter: brightness(0);
+//   filter: brightness(0);
+// }
 
 
 // STAGE STYLES
