@@ -5,17 +5,14 @@
     </div>
 
     <div class="menu">
-        <div class="menu-item">
-            <h2>CHAMPIONS</h2>
-        </div>
-        <div class="menu-item">
-            <h2>SKILLS</h2>
-        </div>
-        <div class="menu-item">
-            <h2>ARTWORK</h2>
-        </div>
+        <button *ngFor="let item of data" (click)="select(item.id)" class="menu-item">
+            <h2>{{ item.id }}</h2>
+            <!-- <p *ngIf="!item.status">coming soon</p> -->
+        </button>
     </div>
-    <button (click)="verify()" class="next" [ngClass]="{ 'disabled-btn': !user.selected }"
-        [disabled]="!user.selected">START <br> LEARNING<br>
+
+    <!-- [ngClass]="{ 'disabled-btn': !user.selected }" -->
+    <!-- [disabled]="!user.selected" -->
+    <button (click)="verify()" class="d-button next btn-left">START <br> LEARNING<br>
         <span>>></span></button>
 </div>
