@@ -111,10 +111,6 @@ export class StagesComponent {
     }
 
     async stageSkill() {
-        // if (this.user.selected === '') {
-        //     console.log("NOTHING SELECTED");
-        // }
-
         // Get random champion index
         let entry = this.mainChampions.selected;
         let championKey = Object.keys(entry)[Math.floor(Math.random() * entry.length)];
@@ -175,7 +171,7 @@ export class StagesComponent {
             this.answer = "false";
             setTimeout(() => {
                 this.nextStage();
-            }, 1000);
+            }, 1500);
         }
     }
 

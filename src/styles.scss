@@ -332,6 +332,15 @@ h2 span {
         width:30%;
         height:30%;
         border:1px solid #C8AA6E;
+        .correct-answer { 
+            p, h2 {
+            margin:0px;
+            }
+            h2 {
+                color:transparent;
+                -webkit-text-stroke: 1px #C8AA6E;
+            }
+        }
     }
 }
 .unactive {
@@ -341,7 +350,7 @@ h2 span {
     display:flex!important;
 }
 
-// ANIMANIMATIONS
+// ANIMATIONS
 #load {
           width: 150px;
       animation: loading 3s linear infinite;

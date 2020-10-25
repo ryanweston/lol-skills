@@ -21,24 +21,25 @@ export class HomeComponent {
     }
 
     verify() {
-        if (this.selected) {
+        if (this.selected && this.selected !== 'tbd') {
             const navigationExtras: NavigationExtras = { state: { type: this.selected } };
             this.router.navigate(['setup'], navigationExtras);
         }
     }
 
-    select(type) {
-        this.selected = type;
-        console.log(this.selected);
+    select(index) {
+        if (this.data[index].status) {
+            this.selected = this.data[index].id;
+        } else {
+            this.selected = 'tbd';
+        }
     }
 
-    mouseEnter(id) {
-        console.log("mouse enter : " + id);
-        this.hoverStatus[id] = true;
+    mouseEnter(index) {
+        this.hoverStatus[index] = true;
     }
-    mouseLeave(id) {
-        this.hoverStatus[id] = false;
-        console.log("mouse leave : " + id);
+    mouseLeave(index) {
+        this.hoverStatus[index] = false;
     }
 
 }
