@@ -27,7 +27,7 @@ export class StagesComponent {
     stage = 0;
     lane = {}
     loading = true;
-    answer = "false";
+    answer = "";
     score = 0;
 
     user = { selected: '' }
@@ -186,7 +186,7 @@ export class StagesComponent {
         //Reset variables
         this.currentChampion = { name: "", skill: "", keyRef: "" };
         this.user.selected = '';
-        this.answer = "false";
+        this.answer = "";
 
         this.stage++;
         this.stageSkill();

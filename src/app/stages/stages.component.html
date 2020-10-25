@@ -35,13 +35,21 @@
             </button>
         </div>
 
-        <!-- SUCCESS OR FAIL ANIMATION -->
-        <div class="loading unactive" [ngClass]="{'success': answer === 'correct' }">
-            <div class="loading-bro">
-                <h1>SUCCESS</h1>
-                <svg id="load" x="0px" y="0px" viewBox="0 0 150 150">
-                    <circle id="loading-inner" cx="75" cy="75" r="60" />
-                </svg>
+        <!-- SUCCESS ANIMATION -->
+        <div class="answered-container unactive" [ngClass]="{'answered': answer === 'correct' }">
+            <div class="answered-bg"></div>
+            <div class="popup">
+                <h1>CORRECT</h1>
+            </div>
+        </div>
+
+        <!-- FAIL ANIMATION -->
+        <div class="answered-container unactive" [ngClass]="{'answered': answer === 'false' }">
+            #<div class="answered-bg"></div>
+            <div class="popup">
+                <h1>INCORRECT</h1>
+                <p>The correct champion is:</p>
+                <h2>{{currentChampion.name}}</h2>
             </div>
         </div>
 
