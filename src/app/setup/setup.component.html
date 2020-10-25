@@ -1,8 +1,10 @@
 <div class="centered-container">
-    <header>
-        <h1>CHOOSE YOUR ROLE</h1><br>
-    </header>
-    <div class="main">
+    <img class="logo" src="../assets/logo.svg">
+    <div class="bg-title">
+        <!-- <h1>LEARN LEAGUE</h1> -->
+        <h1 class="opacity">CHOOSE YOUR ROLE</h1>
+    </div>
+    <div class="main" [ngClass]="{'selected-contain': selected.role }">
         <div class="roles">
             <button (click)="selectRole('top')" [ngClass]="{'selected': selected.role == 'top'}"><img
                     src="../assets/data/img/roles/top.png"></button>

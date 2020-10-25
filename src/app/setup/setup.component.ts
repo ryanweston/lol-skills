@@ -6,6 +6,7 @@ import { Router, NavigationExtras } from '@angular/router';
 export class SetupComponent {
     title = 'lol-skills';
 
+    hoverStatus = false;
     stage = 0;
 
     selected = { type: '', role: '', difficulty: '6' }
@@ -42,4 +43,13 @@ export class SetupComponent {
         const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6 } };
         this.router.navigate(['begin'], navigationExtras);
     }
+
+    // mouseEnter() {
+    //     console.log("mouse enter : " + id);
+    //     this.hoverStatus = true;
+    // }
+    // mouseLeave() {
+    //     this.hoverStatus = false
+    //     console.log("mouse leave : ");
+    // }
 }

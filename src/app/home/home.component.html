@@ -12,7 +12,7 @@
             (click)="select(item.id)" class="menu-item"
             [ngClass]="{'itemHover': selected && hoverStatus[i] === false && selected !== item.id }">
             <h2>{{ item.id }}</h2>
-            <!-- <p *ngIf="!item.status">coming soon</p> -->
+            <p *ngIf="!item.status">coming soon</p>
         </button>
     </div>
 
@@ -20,7 +20,7 @@
 
     <!-- [ngClass]="{ 'disabled-btn': !user.selected }" -->
     <!-- [disabled]="!user.selected" -->
-    <button (click)="verify()" class="d-button next btn-right">
+    <button (click)="verify()" class="d-button next btn-right" [ngClass]="{ 'disabled-btn': !selected }">
         START <br> LEARNING<br> <span>>></span>
     </button>
 </div>

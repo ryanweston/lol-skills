@@ -199,7 +199,7 @@ button {
             padding:0px;
             margin:0px;
             position:absolute;
-            top:-10px;
+            bottom:5px;
             right:10px;
         }
     }
@@ -213,22 +213,40 @@ h2 span {
 
 // ROLES SELECTION
 .main {
+    z-index:500;
     display:flex;
     align-items:center;
     justify-content:center;
+    background-color:#000000;
+    border:1px solid #C8AA6E;
+}
+.main:hover, .selected-contain {
+    border:1px solid #282216;
 }
 .roles button {
     padding:20px 30px;
-    border:0px;
+    border-left:3px solid transparent;
+   border-right:3px solid transparent;
+   border-top:2px solid transparent;
+   border-bottom:2px solid transparent;
+}
+.roles button img { 
+    height:50px;
+}
+.roles button:hover, .main .selected { 
+   border-left:3px solid #C8AA6E;
+   border-right:3px solid #C8AA6E;
+   border-top:2px solid #C8AA6E;
+   border-bottom:2px solid #C8AA6E;
 }
 // .roles .last {
 //     border-right:0px!important;
 // }
 
-.roles button img {
-    height:75px;
-    width:auto;
-}
+// .roles button img {
+//     height:75px;
+//     width:auto;
+// }
 
 // .roles button:hover img, .selected img{
 //     -webkit-filter: brightness(0);
