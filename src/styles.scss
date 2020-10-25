@@ -280,7 +280,10 @@ h2 span {
 .champions img {
     border: 3px solid transparent;
 }
-.champions .active {
+.champions img:hover {
+    cursor: pointer;
+}
+.champions .active, .champions img:hover {
     border: 3px solid #C8AA6E;
 }
 
