@@ -17,9 +17,19 @@
     font-family: Monument;
 }
 
-
+.bg-image {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background-image: url('/assets/ashe.png');
+    background-size:cover;
+    opacity:0.07;
+}
 // GLOBAL STYLES
 body {
+
     padding:0px;
     margin:0px;
     background-color:black;
@@ -97,6 +107,7 @@ button {
     padding:0px;
     text-align:left;
     font-weight:bold;
+    color:#C8AA6E;
 }
 .next:hover {
     background-color:transparent;
@@ -109,10 +120,13 @@ button {
 .bg-title { 
     position:absolute;
     top:20px;
-    left:20px;
+    left:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     margin:auto;
     width:100vw;
-    height:100%;
+    height:100vh;
     h1 { 
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
@@ -128,7 +142,7 @@ button {
         color:transparent;
     }
     .opacity {
-        opacity:0.1;
+        opacity:0.5;
     }
 }
 
@@ -145,14 +159,22 @@ button {
     overflow:hidden;
 }
 
+
+//HOME PAGE
+.logo {
+    position:absolute;
+    top:30px;
+    left:30px;
+    // left:calc(50%-2em)
+}
 .menu {
+    padding:30px;
     transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
     display:flex;
     flex-direction: column;
     align-items:center;
     position:absolute;
     right:15%;
-    // bottom:15%;
     .menu-item {
     position:relative;
 
@@ -160,6 +182,7 @@ button {
         background:transparent;
         border:0px;
         h2 {
+            text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
             font-size:6em;
             margin:0px;
             text-align:center;
@@ -168,6 +191,7 @@ button {
                 font-size:6.75em;
                 // &:before {
                 //     content: '>> ';
+                //     font-weight:900;
                 // }
             }
         }
@@ -308,4 +332,16 @@ h2 span {
     text-align:left;
     padding:0px;
     margin-top:15px;
+}
+.createdBy {
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    margin-bottom:0px;
+}
+.itemHover {
+    h2 {
+        color:transparent!important;
+        -webkit-text-stroke: 2px #C8AA6E;
+    }
 }
