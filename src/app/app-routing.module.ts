@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'setup', component: SetupComponent },
   { path: 'begin', component: StagesComponent },
-  { path: 'completed', component: StagesComponent },
+  { path: 'completed', component: CompletedComponent },
   { path: '**', redirectTo: '' }
 ];
 

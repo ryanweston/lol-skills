@@ -9,7 +9,7 @@ export class SetupComponent {
     hoverStatus = false;
     stage = 0;
 
-    selected = { type: '', role: '', difficulty: '6' }
+    selected = { type: '', role: '', difficulty: 2 }
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
@@ -23,7 +23,7 @@ export class SetupComponent {
 
     ngOnInit() {
         this.selected.role = '';
-        this.selected.difficulty = '';
+        // this.selected.difficulty: Number;
         console.log(this.selected);
     }
     selectRole(role) {
@@ -40,7 +40,7 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6 } };
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
         this.router.navigate(['begin'], navigationExtras);
     }
 

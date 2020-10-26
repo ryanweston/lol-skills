@@ -24,23 +24,6 @@
                 <span>>></span></button>
         </div>
 
-        <!-- STAGE COMPLETION -->
-        <div *ngIf="stage == (difficulty * 4)">
-            <h1 class="score">{{score}} / {{difficulty * 4}}</h1>
-            <h1>COMPLETED!</h1>
-            <br>
-            <button>Restart</button>
-            <div class="share">
-                <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
-                    Tweet</a>
-            </div>
-
-            <button routerLink="/">
-                <!-- ADD RESETS TO SEPERATE FUNCTION -->
-                <p>BACK TO HOME</p>
-            </button>
-        </div>
-
         <!-- SUCCESS ANIMATION -->
         <div class="answered-container unactive" [ngClass]="{'answered': answer === 'correct' }">
             <div class="answered-bg"></div>

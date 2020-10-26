@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import lanes from '../../assets/data/lanes.json';
 import { HttpClient } from '@angular/common/http';
 
@@ -185,6 +185,15 @@ export class StagesComponent {
         this.answer = "";
 
         this.stage++;
-        this.stageSkill();
+
+        if (this.stage != (this.difficulty * 4)) {
+            this.stageSkill();
+
+        } else {
+            const navigationExtras: NavigationExtras = { state: { score: this.score } };
+            this.router.navigate(['completed'], navigationExtras);
+        }
+
+
     }
 }
