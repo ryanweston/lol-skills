@@ -1,6 +1,6 @@
 <div class="centered-container">
-    <!-- <img class="logo" src="../assets/logo.svg"> -->
-    <div class="bg-title">
+    <a routerLink="/" href="/"><img class="logo" src="../assets/logo.svg"></a>
+    <div class="bg-title completed-title">
         <!-- <h1>LEARN LEAGUE</h1> -->
         <h1 class="opacity">NEARLY THERE!</h1>
     </div>
@@ -12,13 +12,15 @@
             <h1>{{score}} / {{questions}}</h1>
         </div> -->
 
-        
+
         <div class="share-container">
             <p>Share your results:</p>
             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
-                Tweet</a>
+                Twitter</a>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
+                Facebook</a>
         </div>
-<!-- 
+        <!-- 
         <button class="alt-btn" routerLink="/">
             <p>Play again >></p>
         </button>
@@ -26,8 +28,7 @@
         <a href="/"><p>Back to homepage</p></a> -->
 
     </div>
-    <button (click)="verify()" class="d-button next btn-right"
-    [ngClass]="{ 'disabled-btn': !selected || selected === 'tbd'}">
-    PLAY <br> AGAIN<br> <span>>></span>
-</button>
+    <button routerLink="/" class="d-button next btn-right">
+        PLAY <br> AGAIN<br> <span>>></span>
+    </button>
 </div>

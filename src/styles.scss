@@ -60,7 +60,13 @@ h3 {
     margin-left: 20px;
     background-color: black;
 }
-
+a {
+    color:#C8AA6E;
+    text-decoration:none;
+    &:hover {
+        border-bottom:2px solid;
+    }
+} 
 
 // Button styles
 button {
@@ -95,13 +101,6 @@ button {
     opacity:0.2;
     cursor: not-allowed;
     pointer-events: none;
-}
-.share-container {
-    display:flex;
-    flex-direction:row;
-    p {
-        color:#C8AA6E;
-    }
 }
 .alt-btn {
     width:100%;
@@ -183,10 +182,14 @@ button {
 
 //HOME PAGE
 .logo {
+    z-index:600;
     position:absolute;
     top:30px;
     left:30px;
     // left:calc(50%-2em)
+    &:hover {
+        opacity:0.5;
+    }
 }
 .menu {
     padding:30px;
@@ -372,7 +375,7 @@ h2 span {
 }
 
 // COMPLETION SCREEN 
-
+.completed-title {text-align:center;left:0px;top:0px;}
 .completed {
     padding:40px;
     border:1px solid #C8AA6E;
@@ -401,6 +404,14 @@ h2 span {
         }
     }
     // width:50%;
+}
+
+.share-container {
+    // display:flex;
+    // flex-direction:row;
+    p {
+        color:#C8AA6E;
+    }
 }
 
 // ANIMATIONS
