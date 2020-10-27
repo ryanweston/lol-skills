@@ -162,7 +162,7 @@ button {
         color:transparent;
     }
     .opacity {
-        opacity:0.5;
+        opacity:0.2;
     }
 }
 
@@ -186,44 +186,39 @@ button {
     position:absolute;
     top:30px;
     left:30px;
-    // left:calc(50%-2em)
     &:hover {
         opacity:0.5;
     }
 }
 .menu {
     padding:30px;
-    transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
+    // transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
     display:flex;
     flex-direction: column;
     align-items:center;
-    position:absolute;
-    right:15%;
+    // position:absolute;
+    // right:5%;
+    // margin-top:10%;
     .menu-item {
-    position:relative;
-
+        position:relative;
         display:block;
         background:transparent;
         border:0px;
         h2 {
             text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
-            font-size:6em;
+            font-size:4.5em;
             margin:0px;
             text-align:center;
             text-transform: uppercase;
             &:hover {
-                font-size:6.75em;
-                // &:before {
-                //     content: '>> ';
-                //     font-weight:900;
-                // }
+                font-size:5.5em;
             }
         }
         p {
             padding:0px;
             margin:0px;
             position:absolute;
-            bottom:5px;
+            bottom:0px;
             right:10px;
         }
     }
@@ -263,19 +258,6 @@ h2 span {
    border-top:2px solid #C8AA6E;
    border-bottom:2px solid #C8AA6E;
 }
-// .roles .last {
-//     border-right:0px!important;
-// }
-
-// .roles button img {
-//     height:75px;
-//     width:auto;
-// }
-
-// .roles button:hover img, .selected img{
-//     -webkit-filter: brightness(0);
-//   filter: brightness(0);
-// }
 
 
 // STAGE STYLES
@@ -411,6 +393,7 @@ h2 span {
     // flex-direction:row;
     p {
         color:#C8AA6E;
+        margin-bottom:0px;
     }
 }
 
@@ -468,4 +451,26 @@ h2 span {
         color:transparent!important;
         -webkit-text-stroke: 2px #C8AA6E;
     }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1200px) {
+    .menu {
+        .menu-item {
+            h2 {
+                font-size:6em;
+                &:hover {
+                    font-size:6.75em;
+                }
+        }
+    }
+}
+    
 }
