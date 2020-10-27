@@ -6,7 +6,9 @@ import { Router, NavigationExtras } from '@angular/router';
 export class CompletedComponent {
     title = 'lol-skills';
 
-    score = '';
+    score;
+    questions;
+    response = '';
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
@@ -17,10 +19,14 @@ export class CompletedComponent {
         }
 
         this.score = navigation.extras.state.score;
+        this.questions = navigation.extras.state.diffi * 4;
+
     }
 
     ngOnInit() {
-        console.log(this.score);
+        // Get percentage value of score to check
+        console.log((this.score * 100) / this.questions)
+       // Check for multiple cases in switch statement depending on percentage?
     }
 
 }

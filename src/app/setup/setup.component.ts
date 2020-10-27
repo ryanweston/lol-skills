@@ -40,16 +40,8 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
-        this.router.navigate(['begin'], navigationExtras);
+        // const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
+        const navigationExtras: NavigationExtras = { state: { score: 5, diffi: 6 } };
+        this.router.navigate(['completed'], navigationExtras);
     }
-
-    // mouseEnter() {
-    //     console.log("mouse enter : " + id);
-    //     this.hoverStatus = true;
-    // }
-    // mouseLeave() {
-    //     this.hoverStatus = false
-    //     console.log("mouse leave : ");
-    // }
 }

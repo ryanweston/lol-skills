@@ -87,7 +87,6 @@ button {
     bottom:30px;
     right:30px;
 }
-
 .roles .selected {
     color:black;
     cursor: pointer;
@@ -96,6 +95,28 @@ button {
     opacity:0.2;
     cursor: not-allowed;
     pointer-events: none;
+}
+.share-container {
+    display:flex;
+    flex-direction:row;
+    p {
+        color:#C8AA6E;
+    }
+}
+.alt-btn {
+    width:100%;
+    background-color:#C8AA6E;
+   p{
+       color:black;
+   }
+}
+.alt2-btn {
+    width:48%;
+    background-color:transparent;
+    border:1px solid #C8AA6E;
+   p {
+       color:#C8AA6E;
+   }
 }
 
 // NEXT STAGE/NEXT BUTTON
@@ -348,6 +369,38 @@ h2 span {
 }
 .answered {
     display:flex!important;
+}
+
+// COMPLETION SCREEN 
+
+.completed {
+    padding:40px;
+    border:1px solid #C8AA6E;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    z-index:1000;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        font-size:4em;
+        color:#C8AA6E;
+        // color:transparent;
+        // -webkit-text-stroke: 1px #C8AA6E;
+        margin:0px;
+    }
+    .score {
+        padding:3em 0em;
+        h1 {
+            font-size:2em;
+            padding:1.5em 0.8em;
+            -webkit-text-stroke: 1px #C8AA6E;
+            color:transparent;
+            border:1px solid #C8AA6E;
+            border-radius:50%;
+        }
+    }
+    // width:50%;
 }
 
 // ANIMATIONS

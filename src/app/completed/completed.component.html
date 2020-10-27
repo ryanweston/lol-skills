@@ -1,15 +1,33 @@
-<div>
-    <h1 class="score">{{score}}</h1>
-    <h1>COMPLETED!</h1>
-    <br>
-    <button>Restart</button>
-    <div class="share">
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
-            Tweet</a>
+<div class="centered-container">
+    <!-- <img class="logo" src="../assets/logo.svg"> -->
+    <div class="bg-title">
+        <!-- <h1>LEARN LEAGUE</h1> -->
+        <h1 class="opacity">BETTER LUCK NEXT TIME</h1>
     </div>
+    <div class="completed">
 
-    <button routerLink="/">
-        <!-- ADD RESETS TO SEPERATE FUNCTION -->
-        <p>BACK TO HOME</p>
-    </button>
+        <h1>{{score}} / {{questions}}</h1>
+        <!-- <h1>COMPLETED!</h1> -->
+        <!-- <div class="score">
+            <h1>{{score}} / {{questions}}</h1>
+        </div> -->
+
+        
+        <div class="share-container">
+            <p>Share your results!</p>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">
+                Tweet</a>
+        </div>
+<!-- 
+        <button class="alt-btn" routerLink="/">
+            <p>Play again >></p>
+        </button>
+        
+        <a href="/"><p>Back to homepage</p></a> -->
+
+    </div>
+    <button (click)="verify()" class="d-button next btn-right"
+    [ngClass]="{ 'disabled-btn': !selected || selected === 'tbd'}">
+    PLAY <br> AGAIN<br> <span>>></span>
+</button>
 </div>

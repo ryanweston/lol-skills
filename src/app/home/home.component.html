@@ -16,10 +16,8 @@
         </button>
     </div>
 
-    <p class="createdBy">Created by <b>@rynwstn</b></p>
+    <p class="createdBy">created by <a href="https://twitter.com/rynwstn"><b>@rynwstn</b></a></p>
 
-    <!-- [ngClass]="{ 'disabled-btn': !user.selected }" -->
-    <!-- [disabled]="!user.selected" -->
     <button (click)="verify()" class="d-button next btn-right"
         [ngClass]="{ 'disabled-btn': !selected || selected === 'tbd'}">
         START <br> LEARNING<br> <span>>></span>
