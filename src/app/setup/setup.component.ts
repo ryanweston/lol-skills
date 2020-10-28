@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 
 
-@Component({ templateUrl: 'setup.component.html' })
+@Component({ templateUrl: 'setup.component.html', styleUrls: ['setup.component.css'] })
 export class SetupComponent {
     title = 'lol-skills';
 
