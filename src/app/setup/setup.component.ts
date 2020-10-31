@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 
 
-@Component({ templateUrl: 'setup.component.html', styleUrls: ['setup.component.css'] })
+@Component({ templateUrl: 'setup.component.html', styleUrls: ['setup.component.scss'] })
 export class SetupComponent {
     title = 'lol-skills';
 
@@ -40,8 +40,8 @@ export class SetupComponent {
     }
 
     begin() {
-        // const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
-        const navigationExtras: NavigationExtras = { state: { score: 5, diffi: 6 } };
-        this.router.navigate(['completed'], navigationExtras);
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty } };
+        // const navigationExtras: NavigationExtras = { state: { score: 5, diffi: 6 } };
+        this.router.navigate(['begin'], navigationExtras);
     }
 }

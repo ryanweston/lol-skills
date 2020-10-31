@@ -4,7 +4,7 @@ import lanes from '../../assets/data/lanes.json';
 import { HttpClient } from '@angular/common/http';
 
 
-@Component({ templateUrl: 'stages.component.html', styleUrls: ['stages.component.css'] })
+@Component({ templateUrl: 'stages.component.html', styleUrls: ['stages.component.scss'] })
 export class StagesComponent {
 
     role: string;

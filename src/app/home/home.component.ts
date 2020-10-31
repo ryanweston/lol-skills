@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 
-@Component({ templateUrl: 'home.component.html', styleUrls: ['home.component.css'] })
+@Component({ templateUrl: 'home.component.html', styleUrls: ['home.component.scss'] })
 export class HomeComponent {
 
     hoverStatus = [];

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 
 
-@Component({ templateUrl: 'completed.component.html' })
+@Component({ templateUrl: 'completed.component.html', styleUrls: ['completed.component.scss'] })
 export class CompletedComponent {
     title = 'lol-skills';
 
