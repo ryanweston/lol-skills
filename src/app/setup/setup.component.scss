@@ -29,6 +29,22 @@
     cursor: pointer;
 }
 
+
+@media (max-width: 768px) {
+    .bg-title {
+        display:flex;
+        margin-bottom:40px;
+        margin-top:-30px;
+        position:relative;
+        height:auto;
+        width:auto;
+        text-align:center;
+        left:0px;
+        h1 {
+            font-size:3em;
+        }
+    }
+}
 @media (min-width:768px) {
     .main {
         border:1px solid #C8AA6E;

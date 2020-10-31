@@ -31,9 +31,7 @@
 }
 
 .share-container {
-    // display:flex;
-    // flex-direction:row;
-    margin-top:20px;
+  margin-top:-10px;
     p { 
         color:#C8AA6E;
         margin-bottom:4px;
@@ -74,7 +72,7 @@ svg circle {
 }
 
 svg circle:last-of-type {
-/*   6,28 x r( 90 promień) */
+/*   6.28 x r( 90 promień) */
   stroke-dasharray: 565px;
   stroke-dashoffset: calc(565px - (565px * var(--percent)) / 100);
   stroke: #C8AA6E;
@@ -87,5 +85,11 @@ svg circle:last-of-type {
   }
   100% {
     stroke-dashoffset: calc(565px - (565px * var(--percent)) / 100);
+  }
+}
+
+@media (min-width:768px) {
+  .completed {
+    border:1px solid #C8AA6E;
   }
 }
