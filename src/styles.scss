@@ -66,6 +66,7 @@ a {
     &:hover {
         opacity:0.5;
     }
+    width:40%;
 }
 
 
@@ -118,7 +119,7 @@ button {
 // NEXT STAGE/NEXT BUTTON
 .next {
     line-height:95%;
-    font-size:3em;
+    font-size:2em;
     text-transform: uppercase;
     border:0px;
     padding:0px;
@@ -138,7 +139,7 @@ button {
     position:absolute;
     top:20px;
     left:40px;
-    display:flex;
+    display:none;
     justify-content:center;
     align-items:center;
     margin:auto;
@@ -178,7 +179,22 @@ button {
 
 
 @media (min-width: 768px) {
-
+    .logo {
+        width:auto;
+    }
+    .next {
+        line-height:95%;
+        font-size:3em;
+        text-transform: uppercase;
+        border:0px;
+        padding:0px;
+        text-align:left;
+        font-weight:bold;
+        color:#C8AA6E;
+    }
+    .bg-title { 
+        display:flex;
+    }
 }
 
 @media (min-width: 992px) {

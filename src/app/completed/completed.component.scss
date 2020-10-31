@@ -2,7 +2,7 @@
 .completed-title {text-align:center;left:0px;top:0px;}
 .completed {
     padding:40px 40px;
-    border:1px solid #C8AA6E;
+    // border:1px solid #C8AA6E;
     background-color: black;
     display:flex;
     justify-content: center;
@@ -78,7 +78,7 @@ svg circle:last-of-type {
   stroke-dasharray: 565px;
   stroke-dashoffset: calc(565px - (565px * var(--percent)) / 100);
   stroke: #C8AA6E;
-  animation: cool 4s linear;
+  animation: cool 2.5s linear;
 }
 
 @keyframes cool {

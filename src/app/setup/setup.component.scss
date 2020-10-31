@@ -4,12 +4,10 @@
     align-items:center;
     justify-content:center;
     background-color:#000000;
-    border:1px solid #C8AA6E;
 }
-.main:hover, .selected-contain {
-    border:1px solid #282216;
-}
+
 .roles button {
+    width:33.3%;
     padding:20px 30px;
     border-left:3px solid transparent;
    border-right:3px solid transparent;
@@ -30,4 +28,17 @@
     color:black;
     cursor: pointer;
 }
+
+@media (min-width:768px) {
+    .main {
+        border:1px solid #C8AA6E;
+    }
+    .main:hover, .selected-contain {
+        border:1px solid #282216;
+    }
+    .roles button {
+        width:auto;
+    }
+}
+
 
