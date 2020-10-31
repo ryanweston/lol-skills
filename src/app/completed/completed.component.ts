@@ -10,6 +10,7 @@ export class CompletedComponent {
     score;
     questions;
     response = '';
+    type;
     circlePercentage;
 
     constructor(private router: Router, private sanitizer: DomSanitizer) {
@@ -20,9 +21,9 @@ export class CompletedComponent {
             this.router.navigate(['/']);
         }
 
-
         this.score = navigation.extras.state.score;
         this.questions = navigation.extras.state.diffi * 4;
+        this.type = navigation.extras.state.type;
 
     }
 
@@ -33,6 +34,12 @@ export class CompletedComponent {
 
         //Assign string to variable containing custom CSS variable class (percentage)
         this.circlePercentage = this.sanitizer.bypassSecurityTrustStyle('--percent: ' + this.score);
+    }
+
+    playAgain() {
+        const navigationExtras: NavigationExtras = { state: { type: this.type, diffi: 6 } };
+        this.router.navigate(['setup'], navigationExtras);
+        console.log('wow');
     }
 
 }

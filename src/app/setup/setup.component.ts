@@ -40,7 +40,7 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6 } };
+        const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.selected.type } };
         this.router.navigate(['completed'], navigationExtras);
     }
 }

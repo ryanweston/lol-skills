@@ -9,6 +9,7 @@ export class StagesComponent {
 
     role: string;
     difficulty: number;
+    type;
 
     constructor(private router: Router, private http: HttpClient) {
         const navigation = this.router.getCurrentNavigation();
@@ -20,6 +21,7 @@ export class StagesComponent {
 
         this.role = navigation.extras.state.role;
         this.difficulty = navigation.extras.state.diffi;
+        this.type = navigation.extras.state.type;
     }
 
     skillTemplate = [false, false, false, false]
@@ -190,7 +192,7 @@ export class StagesComponent {
             this.stageSkill();
 
         } else {
-            const navigationExtras: NavigationExtras = { state: { score: this.score } };
+            const navigationExtras: NavigationExtras = { state: { score: this.score, type: this.type, difficulty: this.difficulty } };
             this.router.navigate(['completed'], navigationExtras);
         }
 
