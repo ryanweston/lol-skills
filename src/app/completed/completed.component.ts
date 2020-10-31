@@ -25,7 +25,7 @@ export class CompletedComponent {
 
     ngOnInit() {
         // Get percentage value of score to check
-        console.log((this.score * 100) / this.questions)
+        this.score = Math.round((this.score * 100) / this.questions)
        // Check for multiple cases in switch statement depending on percentage?
     }
 

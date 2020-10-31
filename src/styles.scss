@@ -58,6 +58,17 @@ a {
     }
 } 
 
+.logo {
+    z-index:600;
+    position:absolute;
+    top:30px;
+    left:30px;
+    &:hover {
+        opacity:0.5;
+    }
+}
+
+
 // Button styles
 button {
     background:transparent;
