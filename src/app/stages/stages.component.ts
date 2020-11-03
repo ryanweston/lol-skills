@@ -192,7 +192,7 @@ export class StagesComponent {
             this.stageSkill();
 
         } else {
-            const navigationExtras: NavigationExtras = { state: { score: this.score, type: this.type, difficulty: this.difficulty } };
+            const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.type } };
             this.router.navigate(['completed'], navigationExtras);
         }
 

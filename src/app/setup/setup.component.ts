@@ -40,7 +40,7 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.selected.type } };
-        this.router.navigate(['completed'], navigationExtras);
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6, type: this.selected.type } };
+        this.router.navigate(['begin'], navigationExtras);
     }
 }
