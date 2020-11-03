@@ -53,6 +53,17 @@
 // CIRCLE & CIRCLE ANIMATION
 .wrapper{
   margin: 0 auto;
+  position: relative;
+  .text-wrapper {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
 }
 .percent{
   margin: 0 auto;
@@ -91,5 +102,8 @@ svg circle:last-of-type {
 @media (min-width:768px) {
   .completed {
     border:1px solid #C8AA6E;
+  }
+  .share-container {
+    margin-top:20px;
   }
 }

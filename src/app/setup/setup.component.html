@@ -4,6 +4,7 @@
         <!-- <h1>LEARN LEAGUE</h1> -->
         <h1 class="opacity">CHOOSE YOUR ROLE</h1>
     </div>
+
     <div class="main" [ngClass]="{'selected-contain': selected.role }">
         <div class="roles">
             <button (click)="selectRole('top')" [ngClass]="{'selected': selected.role == 'top'}"><img
