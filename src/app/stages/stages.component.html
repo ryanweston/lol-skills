@@ -1,16 +1,26 @@
 <div class="centered-container">
     <div class="stage-container">
+        <div class="stage-indicator">
+            <img src="./assets/cock.svg">
+            <div class="stage-number-container">
+                <h3>{{stage + 1}}.</h3>
+            </div>
+        </div>
+        <div class="back-home">
+            <p>Back to home</p>
+        </div>
 
         <!-- STAGE INDICATOR -->
-        <div class="stage" *ngIf="stage != (difficulty * 4)">
+        <!-- <div class="stage" *ngIf="stage != (difficulty * 4)">
+            <div class="box"></div>
             <h3>{{stage + 1}}.</h3>
-        </div>
+        </div> -->
 
         <!-- STAGE CONTENT -->
         <div *ngIf="stage != (difficulty * 4)">
             <h2 [innerHTML]="currentChampion?.skill"></h2>
 
-            <h3>Pick the correct champion</h3>
+            <h3 class="champions-title">Pick the correct champion</h3>
             <div class="champions">
                 <div *ngFor="let champion of mainChampions.selected;" style="display:inline-block">
                     <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"

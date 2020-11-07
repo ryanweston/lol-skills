@@ -11,6 +11,18 @@ export class StagesComponent {
     difficulty: number;
     type;
 
+    skillTemplate = [false, false, false, false];
+
+    stage = 0;
+    lane = {}
+    loading = false;
+    answer = "";
+    score = 0;
+
+    user = { selected: '' }
+    mainChampions = { selected: [], files: [] };
+    currentChampion = { name: "", skill: "", keyRef: "" }
+
     constructor(private router: Router, private http: HttpClient) {
         const navigation = this.router.getCurrentNavigation();
 
@@ -24,27 +36,16 @@ export class StagesComponent {
         this.type = navigation.extras.state.type;
     }
 
-    skillTemplate = [false, false, false, false]
-
-    stage = 0;
-    lane = {}
-    loading = true;
-    answer = "";
-    score = 0;
-
-    user = { selected: '' }
-    mainChampions = { selected: [], files: [] };
-    currentChampion = { name: "", skill: "", keyRef: "" }
-
     ngOnInit() {
         this.stage = 0;
+        this.loading = true;
 
         this.lane = lanes.lanes[this.role];
         this.findChampions();
 
-        if (this.mainChampions.files[0]) {
-            console.log(this.mainChampions);
-        }
+        // if (this.mainChampions.files[0]) {
+        //     console.log(this.mainChampions);
+        // }
     }
 
     shuffle(entry) {
@@ -62,8 +63,6 @@ export class StagesComponent {
     }
 
     async findChampions() {
-        console.log(this.loading);
-
         let entry = lanes.lanes[this.role];
         console.log(entry);
         // Randomise entry array
@@ -122,7 +121,7 @@ export class StagesComponent {
         //Set index as a reference to check against
         this.currentChampion.keyRef = championKey;
 
-        console.log("%c CHAMPION: ", 'background: blue', this.currentChampion.name + " KEY: " + championKey);
+        // console.log("%c CHAMPION: ", 'background: blue', this.currentChampion.name + " KEY: " + championKey);
 
         // Get skill index
         this.getSkillIndex(championKey);
@@ -133,7 +132,7 @@ export class StagesComponent {
         // Random key between 0-3, check if key path has already been used
         let num = Math.floor(Math.random() * 4);
 
-        console.log("SKILL KEY: " + num)
+        // console.log("SKILL KEY: " + num)
 
 
         if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {

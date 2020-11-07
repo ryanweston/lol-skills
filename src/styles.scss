@@ -39,16 +39,7 @@ header h1 {
     line-height:97%;
 }
 h2 {
-    font-size:2em;
-}
-h3 {
-    font-size:2.5em;
-    margin-bottom:0px;
-    color:black;
-    -webkit-text-stroke: 1px #C8AA6E;
-    margin-bottom: -20px;
-    margin-left: 20px;
-    background-color: black;
+    font-size:1em;
 }
 a {
     color:#C8AA6E;
@@ -194,6 +185,12 @@ button {
     }
     .bg-title { 
         display:flex;
+    }
+    h2 {
+        font-size:2em;
+    }
+    h3 {
+        font-size:2.5em;
     }
 }
 

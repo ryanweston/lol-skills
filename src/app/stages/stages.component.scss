@@ -1,28 +1,90 @@
 // STAGE STYLES
-.stage-container {
-    max-width:800px;
+.centered-container {
+    padding:0px;
 }
+.stage-container {
+    width:100%;
+    h2 {
+        padding:0px 30px;
+    }
+}
+.stage-indicator {
+    position:absolute;
+    top:-5%;
+    left:-5%;
+    height:100vh;
+    opacity:0.1;
+    z-index: -2;
+    img {
+        height:100%;
+        width:auto;
+        visibility:hidden;
+    }
+    h3 {
+        position:absolute;
+        top:15%;
+        left:30%;
+        font-size:30em;
+        -webkit-text-stroke: 1px #C8AA6E;
+        color:black;
+        margin:0px;
+        background:transparent;
+    }
+}
+
+.back-home {
+    position:absolute;
+    top:20px;
+    right:30px;
+}
+
 .stage {
     position:absolute;
-    top:30px;
+    top:20px;
     left:30px;
     // background-color:#C8AA6E;
 }
+.box {
+    position:absolute; 
+    top:-150px;
+    left:-150px;
+    width:150px;
+    height:325px;
+    transform:rotate(45deg);
+    // background-color:#C8AA6E;
+    z-index:-2;
+}
 .stage h3 {
-    font-size:8em;
+    font-size:4em;
     -webkit-text-stroke: 1px #C8AA6E;
     color:black;
     margin:0px;
     background:transparent;
 }
+
+.champions-title {
+    font-size:1.5em;
+    line-height:50%;
+    color:black;
+    -webkit-text-stroke: 1px #C8AA6E;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
 .champions {
     background-color:black;
     box-sizing: border-box;
     padding:20px;
-    border:1px solid #C8AA6E;
+    overflow-x:scroll;
+    white-space:nowrap;
+    width:100%;
+    border-top:1px solid #C8AA6E;
+    border-bottom:1px solid #C8AA6E;
+    
 }
 .champions img {
     border: 3px solid transparent;
+    height:80px;
+    width:80px;
 }
 .champions img:hover {
     cursor: pointer;
@@ -47,6 +109,7 @@
 .loading-bro {
     margin: 50px auto;
     width: 150px;
+
 }
 
 .answered-container {
@@ -92,4 +155,85 @@
 }
 .answered {
     display:flex!important;
+}
+
+@media (min-width: 768px) {
+    .stage h3 {
+        font-size:8em;
+    }
+}
+
+@media (min-width: 900px) {
+    .stage {
+        top:0px;
+    }
+    .box {
+        position:absolute; 
+        top:-150px;
+        left:-150px;
+        width:150px;
+        height:500px;
+        background-color:#C8AA6E;
+    }
+    .stage-container {
+        padding:0px;
+        max-width:800px;
+    }
+    .stage-container {
+        h2 {
+            padding:0px;
+        }
+    }
+    .champions-title {
+        font-size:2.5em;
+        line-height:100%;
+
+        margin-bottom: -20px;
+        margin-left: 20px;
+    }
+    .champions {
+        border:1px solid #C8AA6E;
+        width:auto;
+        white-space: wrap;
+        overflow:hidden;
+    }
+    .champions img {
+        height:120px;
+        width:120px;
+    }
+}
+
+#load {
+    width: 150px;
+    animation: loading 3s linear infinite;
+    #loading-inner {
+        stroke: {
+        dashoffset: 0;
+        dasharray: 300;
+        width: 10;
+        miterlimit: 10;
+        linecap: round;
+    }
+    animation: loading-circle 2s linear infinite;
+    stroke:
+    #C8AA6E;
+    fill: transparent;
+    }
+}
+
+@keyframes loading {
+    0% { 
+  transform: rotate(0); 
+}
+    100% { 
+  transform: rotate(360deg);
+}
+}
+@keyframes loading-circle {
+    0% { 
+  stroke-dashoffset: 0
+}
+    100% { 
+  stroke-dashoffset: -600;
+}
 }

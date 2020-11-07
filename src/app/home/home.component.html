@@ -2,18 +2,19 @@
 <div class="centered-container">
     <a routerLink="/" href="/"><img class="logo" src="../assets/logo.svg"></a>
 
-    <div class="bg-title">
-        <!-- <h1>LEARN LEAGUE</h1> -->
+    <!-- <div class="bg-title">
         <h1 class="opacity">LEARN THE BASICS</h1>
-    </div>
-
-    <div class="menu">
-        <button *ngFor="let item of data; let i = index" (mouseenter)="mouseEnter(i)" (mouseleave)="mouseLeave(i)"
-            (click)="select(i)" class="menu-item"
-            [ngClass]="{'itemHover': selected && hoverStatus[i] === false && selected !== item.id }">
-            <h2>{{ item.id }}</h2>
-            <p *ngIf="!item.status">coming soon</p>
-        </button>
+    </div> -->
+    <div class="menu-container">
+        <h5>Pick what you want to learn</h5>
+        <div class="menu">
+            <button *ngFor="let item of data; let i = index" (mouseenter)="mouseEnter(i)" (mouseleave)="mouseLeave(i)"
+                (click)="select(i)" class="menu-item"
+                [ngClass]="{'itemHover': selected && hoverStatus[i] === false && selected !== item.id }">
+                <h2>{{ item.id }}</h2>
+                <p *ngIf="!item.status">coming soon</p>
+            </button>
+        </div>
     </div>
 
     <p class="createdBy">created by <a href="https://twitter.com/rynwstn"><b>@rynwstn</b></a></p>
