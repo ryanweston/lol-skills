@@ -203,6 +203,14 @@
     }
 }
 
+@media (min-width:1600px) {
+    .stage-indicator {
+        h3 {
+            font-size:51em;
+        }
+    }
+}
+
 #load {
     width: 150px;
     animation: loading 3s linear infinite;
