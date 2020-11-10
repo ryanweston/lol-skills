@@ -151,6 +151,7 @@ button {
     margin:auto;
     width:100vw;
     height:100vh;
+    z-index:-1;
     h1 { 
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */

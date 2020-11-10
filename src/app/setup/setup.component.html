@@ -18,11 +18,13 @@
             <button class="last" (click)="selectRole('sup')" [ngClass]="{'selected': selected.role == 'sup'}"><img
                     src="../assets/data/img/roles/supp.png"></button>
         </div>
-
-        <button class="next btn-right" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
-            [disabled]="!selected.role">START<br>LEARNING<br>
-            <span>>></span></button>
     </div>
+    <input type="checkbox" value="champName">
+    <!-- <label for="vehicle1"> I have a bike</label><br> -->
+
+    <button class="next btn-right" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
+        [disabled]="!selected.role">START<br>LEARNING<br>
+        <span>>></span></button>
 </div>
 
 <!-- DIFFICULTY TEMPORARILY REMOVED -->

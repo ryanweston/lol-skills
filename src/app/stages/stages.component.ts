@@ -9,7 +9,7 @@ export class StagesComponent {
 
     role: string;
     difficulty: number;
-    type;
+    config;
 
     skillTemplate = [false, false, false, false];
 
@@ -33,7 +33,7 @@ export class StagesComponent {
 
         this.role = navigation.extras.state.role;
         this.difficulty = navigation.extras.state.diffi;
-        this.type = navigation.extras.state.type;
+        this.config = navigation.extras.state.config;
     }
 
     ngOnInit() {
@@ -191,7 +191,7 @@ export class StagesComponent {
             this.stageSkill();
 
         } else {
-            const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.type } };
+            const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.config.type } };
             this.router.navigate(['completed'], navigationExtras);
         }
 

@@ -9,7 +9,7 @@ export class SetupComponent {
     hoverStatus = false;
     stage = 0;
 
-    selected = { type: '', role: '', difficulty: 2 }
+    selected = { config: { type: '', champName: true }, role: '', difficulty: 2 }
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
@@ -18,7 +18,7 @@ export class SetupComponent {
             console.log('redirected');
             this.router.navigate(['/']);
         }
-        this.selected.type = navigation.extras.state.type;
+        this.selected.config.type = navigation.extras.state.type;
     }
 
     ngOnInit() {
@@ -40,7 +40,7 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6, type: this.selected.type } };
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6, config: this.selected.config } };
         this.router.navigate(['begin'], navigationExtras);
     }
 }
