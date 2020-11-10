@@ -1,3 +1,27 @@
+nav {
+    width:100vw;
+    // position:absolute;
+    // top:0px;
+    // left:0px;
+    align-self:flex-start;
+    // padding:30px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+ul {
+    height:100%;
+    display:flex;
+    align-items:center;
+    li {
+        font-weight:300;
+        color:#C8AA6E;
+        display:inline-block;
+        margin-right:20px;
+    }
+}
+
 .bg-image {
     position:absolute;
     top:0px;
@@ -13,6 +37,12 @@ h2 span {
     background-color:#C8AA6E;
 }
 
+.menu-wrapper {
+    flex-grow:1; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 .menu-container {
     display:flex;
     flex-direction:row;
@@ -21,7 +51,7 @@ h2 span {
         writing-mode: vertical-rl;
         transform: scale(-1);
         float: right;
-        font-size:1em;
+        font-size:1.5em;
         font-weight:300;
     }
 }
@@ -30,11 +60,8 @@ h2 span {
     // transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
     display:flex;
     flex-direction: column;
-    // align-items:center;
     border-left:1px solid #C8AA6E;
-    // position:absolute;
-    // right:5%;
-    // margin-top:10%;
+   
     .menu-item {
         position:relative;
         display:block;
@@ -46,7 +73,8 @@ h2 span {
             margin:0px;
             text-align:left;
             text-transform: uppercase;
-            
+            -webkit-text-stroke: 2px #C8AA6E;
+            color:transparent;
         }
         p {
             padding:0px;
@@ -63,9 +91,13 @@ h2 span {
 
 .itemHover {
     h2 {
-        color:transparent!important;
-        -webkit-text-stroke: 1px #C8AA6E;
+        // opacity:0.8;
+        -webkit-text-stroke: 1px #C8AA6E!important;
     }
+}
+
+.itemSelected { 
+    h2 {color: #C8AA6E!important;}
 }
 
 .createdBy {
@@ -85,11 +117,7 @@ h2 span {
                 bottom:0px;
             }
     }
-    .itemHover {
-        h2 {
-            -webkit-text-stroke: 2px #C8AA6E;
-        }
-    }
+   
 }  
 
 }
@@ -97,7 +125,7 @@ h2 span {
     .menu {
         .menu-item {
             h2 {
-                font-size:6em;
+                font-size:7em;
             }
             p {
                 bottom:0px;

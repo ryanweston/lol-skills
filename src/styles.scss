@@ -13,6 +13,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: Monument;
+    src: url("/assets/fonts/MonumentGroteskTrial-Medium.otf") format("OpenType");
+    font-weight: 300;
+    font-style: normal;
+}
+
+
 * {
     font-family: Monument;
 }
@@ -60,6 +68,13 @@ a {
     width:40%;
 }
 
+*.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
 
 // Button styles
 button {
