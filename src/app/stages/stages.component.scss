@@ -13,7 +13,7 @@
     top:-5%;
     left:-5%;
     height:100vh;
-    opacity:0.1;
+    opacity:0.2;
     z-index: -2;
     img {
         height:100%;
@@ -79,9 +79,17 @@
     width:100%;
     border-top:1px solid #C8AA6E;
     border-bottom:1px solid #C8AA6E;
-    
 }
-.champions img {
+
+.champion {
+    // border: 1px solid #C8AA6E;
+    margin-right:5px;
+    p {
+        padding-left:5px;
+        margin:0px;
+    }
+}
+.champion img {
     border: 3px solid transparent;
     height:80px;
     width:80px;

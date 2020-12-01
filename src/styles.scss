@@ -1,40 +1,18 @@
-/* FONTS */
-@font-face {
-    font-family: Monument;
-    src: url("/assets/fonts/MonumentGroteskTrial-Black.otf") format("OpenType");
-    font-weight: bold;
-    font-style: normal;
-}
-    
-@font-face {
-    font-family: Monument;
-    src: url("/assets/fonts/MonumentGroteskTrial-Mono.otf") format("OpenType");
-    font-weight: normal;
-    font-style: normal;
-    //test
-}
+$opacity:0.3;
+$border: 1px solid #C8AA6E;
+$color: #C8AA6E;
+$gutter: 30px;
 
-@font-face {
-    font-family: Monument;
-    src: url("/assets/fonts/MonumentGroteskTrial-Medium.otf") format("OpenType");
-    font-weight: 300;
-    font-style: normal;
-}
-
-* {
-    font-family: Monument;
-}
 
 // GLOBAL STYLES
 body {
-
     padding:0px;
     margin:0px;
     background-color:black;
 }
 
-h1, h2, h3, h4, h5, p { 
-    font-family: Monument;
+* {
+    font-family: neue-haas-grotesk-display, sans-serif;
     color:#C8AA6E;
 }
 
@@ -46,16 +24,19 @@ header h1 {
     margin:0px;
     line-height:97%;
 }
+
 h2 {
     font-size:1em;
+    font-weight:900;
 }
+
 a {
     color:#C8AA6E;
     text-decoration:none;
     &:hover {
         border-bottom:2px solid;
     }
-} 
+}
 
 .logo {
     z-index:600;
@@ -130,7 +111,7 @@ button {
     border:0px;
     padding:0px;
     text-align:left;
-    font-weight:bold;
+    font-weight:900;
     color:#C8AA6E;
 }
 .next:hover {
@@ -141,7 +122,7 @@ button {
     float:right;
 }
 
-.bg-title { 
+.bg-title {
     position:absolute;
     top:20px;
     left:40px;
@@ -152,7 +133,7 @@ button {
     width:100vw;
     height:100vh;
     z-index:-1;
-    h1 { 
+    h1 {
         -webkit-touch-callout: none; /* iOS Safari */
         -webkit-user-select: none; /* Safari */
          -khtml-user-select: none; /* Konqueror HTML */
@@ -166,9 +147,7 @@ button {
         -webkit-text-stroke: 1px #C8AA6E;
         color:transparent;
     }
-    .opacity {
-        opacity:0.2;
-    }
+    opacity: $opacity;
 }
 
 .centered-container {
@@ -178,7 +157,7 @@ button {
     justify-content:center;
     align-items:center;
     flex-direction: column;
-    padding:20px;
+    // padding:20px;
     box-sizing:border-box;
     position: relative;
     overflow:hidden;
@@ -191,15 +170,12 @@ button {
     }
     .next {
         line-height:95%;
-        font-size:3em;
-        text-transform: uppercase;
+        font-size:2.5em;
         border:0px;
         padding:0px;
         text-align:left;
-        font-weight:bold;
-        color:#C8AA6E;
     }
-    .bg-title { 
+    .bg-title {
         display:flex;
     }
     h2 {
@@ -211,6 +187,5 @@ button {
 }
 
 @media (min-width: 992px) {
-    
-}
 
+}

@@ -19,7 +19,12 @@
                     src="../assets/data/img/roles/supp.png"></button>
         </div>
     </div>
-    <input type="checkbox" value="champName">
+
+    <div class="options">
+
+      <input type="checkbox" value="champName">
+      <label>Make champion names visible</label>
+    </div>
     <!-- <label for="vehicle1"> I have a bike</label><br> -->
 
     <button class="next btn-right" [ngClass]="{'disabled-btn': !selected.role}" (click)="begin()"
@@ -40,6 +45,6 @@
             <button (click)="selectDifficulty(15)"
                 [ngClass]="{'selected': selected.difficulty == '15'}">Experienced</button>
         </div>
-    
+
         <button class="next" (click)="begin()"><b>START<br>LEARNING<br> <span>>></span></b></button>
     </div> -->

@@ -14,10 +14,10 @@
    border-top:2px solid transparent;
    border-bottom:2px solid transparent;
 }
-.roles button img { 
+.roles button img {
     height:50px;
 }
-.roles button:hover, .main .selected { 
+.roles button:hover, .main .selected {
    border-left:3px solid #C8AA6E;
    border-right:3px solid #C8AA6E;
    border-top:2px solid #C8AA6E;
@@ -27,6 +27,14 @@
 .roles .selected {
     color:black;
     cursor: pointer;
+}
+
+.options {
+  margin-top:10px;
+  input {
+    background-color:black;
+    border: 1px solid #C8AA6E;
+  }
 }
 
 
@@ -56,5 +64,3 @@
         width:auto;
     }
 }
-
-
