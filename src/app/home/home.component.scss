@@ -43,12 +43,6 @@ nav {
   span { margin-right: auto;  }
 }
 
-// p {
-//   text-align: center;
-//   margin: 5px 0 0 0;
-// }
-
-
 ul {
     padding:0px;
     height:100%;
@@ -80,7 +74,7 @@ ul {
     height:100vh;
     background-image: url('/assets/ashe.png');
     background-size:cover;
-    opacity:0.2;
+    opacity:0.1;
     z-index:-2;
 }
 
@@ -93,7 +87,7 @@ h2 span {
     display:flex;
     width:100%;
     margin-top:15%;
-    margin-left:30px;
+    margin-left:40px;
     position:relative;
 }
 
@@ -103,6 +97,14 @@ h2 span {
 
 .menu {
     // transform: perspective(400px) rotateY(-20deg) rotateX(15deg);
+    .title { 
+        color: #C8AA6E;
+        padding-bottom:10px;
+        border-bottom:1px solid #C8AA6E;
+        width:40%;
+        font-weight:600;
+        font-size:1.5em;
+    }
     display:flex;
     flex-direction: column;
     .menu-item {
@@ -180,14 +182,27 @@ h2 span {
     }
 
 }
-
 }
+
 @media (min-width: 1200px) {
     .menu {
         .menu-item {
             h2 {
                 font-size:14em;
             }
+        }
     }
-}
+    .logo-box {
+        img {
+            height:125px;
+        }
+    }
+    ul {
+        li {
+            font-size:1.2em;
+        }
+    }
+    .start {
+        font-size:3em;
+    }
 }

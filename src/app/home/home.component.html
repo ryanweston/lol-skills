@@ -1,27 +1,26 @@
-
 <div (window:scroll)="onWindowScroll()">
   <div class="bg-image"></div>
 
-    <nav [ngClass]="{'scrollNav': navScroll === true }">
-      <div class="box">
-        <ul>
-            <li><a href="https://www.notion.so/Learn-League-How-it-works-e5758edb8aee433baba28fe6a2e563ed">HOW IT
-                    WORKS</a></li>
-            <li><a href="https://www.notion.so/Learn-League-The-Roadmap-e77641b970204192be6f7b4e96317ab5">WHAT IS LL?</a>
-            </li>
-        </ul>
-      </div>
-      <div class="box logo-box">
-        <img src="../assets/logo.svg">
-      </div>
-      <div class="box">
-        <ul>
-          <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FEEDBACK</a></li>
-          <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FAQ</a></li>
-        </ul>
-      </div>
+  <nav [ngClass]="{'scrollNav': navScroll === true }">
+    <div class="box">
+      <ul>
+        <li><a href="https://www.notion.so/Learn-League-How-it-works-e5758edb8aee433baba28fe6a2e563ed">HOW IT
+            WORKS</a></li>
+        <li><a href="https://www.notion.so/Learn-League-The-Roadmap-e77641b970204192be6f7b4e96317ab5">WHAT IS LL?</a>
+        </li>
+      </ul>
+    </div>
+    <div class="box logo-box">
+      <img src="../assets/logo.svg">
+    </div>
+    <div class="box">
+      <ul>
+        <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FEEDBACK</a></li>
+        <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FAQ</a></li>
+      </ul>
+    </div>
 
-        <!-- <ul>
+    <!-- <ul>
             <li><a href="https://www.notion.so/Learn-League-How-it-works-e5758edb8aee433baba28fe6a2e563ed">HOW IT
                     WORKS</a></li>
             <li><a href="https://www.notion.so/Learn-League-The-Roadmap-e77641b970204192be6f7b4e96317ab5">WHAT IS LL?</a>
@@ -30,29 +29,31 @@
             <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FEEDBACK</a></li>
             <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FAQ</a></li>
         </ul> -->
-    </nav>
+  </nav>
 
-    <button (click)="verify()" class=" start d-button next btn-right"
-        [ngClass]="{ 'disabled-btn': !selected || selected == 'tbd'}">
-        START <br> LEARNING<br> <span>>></span>
-    </button>
-  
+  <button (click)="verify()" class=" start d-button next btn-right"
+    [ngClass]="{ 'disabled-btn': !selected || selected == 'tbd'}">
+    START <br> LEARNING<br> <span>>></span>
+  </button>
+
 </div>
 
 <div class="menu-wrapper">
-    <div class="menu-container">
-        <div class="menu">
-            <button *ngFor="let item of data; let i = index" (mouseenter)="mouseEnter(i)"
-                (mouseleave)="mouseLeave(i)" (click)="select(i)" class="menu-item"
-                [ngClass]="{'itemHover': hoverStatus[i] === true && selected !== item.id, itemSelected: selected === item.id }">
-                <h2>{{ item.id }}</h2>
-                <!-- <p *ngIf="!item.status">coming soon</p> -->
-                <p *ngIf="selected === item.id">
-                  Quiz yourself based on item descriptions. You’ll be given an item description and it’ll be up to you to pick the correct item based on the name and item image. 
-                </p> 
-            </button>
-        </div>
+  <div class="menu-container">
+    <div class="menu">
+      <h2 class="title">Choose an area to learn more</h2>
+      <button *ngFor="let item of data; let i = index" (mouseenter)="mouseEnter(i)" (mouseleave)="mouseLeave(i)"
+        (click)="select(i)" class="menu-item"
+        [ngClass]="{'itemHover': hoverStatus[i] === true && selected !== item.id, itemSelected: selected === item.id }">
+        <h2>{{ item.id }}</h2>
+        <!-- <p *ngIf="!item.status">coming soon</p> -->
+        <p *ngIf="selected === item.id">
+          Quiz yourself based on item descriptions. You’ll be given an item description and it’ll be up to you to pick
+          the correct item based on the name and item image.
+        </p>
+      </button>
     </div>
+  </div>
 </div>
 
 <div class="scrollReveal" [ngClass]="{'display': navScroll === true }">
