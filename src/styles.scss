@@ -13,7 +13,7 @@ body {
 
 * {
     font-family: neue-haas-grotesk-display, sans-serif;
-    color:#C8AA6E;
+    // color:#C8AA6E;
 }
 
 
@@ -36,6 +36,10 @@ a {
     &:hover {
         border-bottom:2px solid;
     }
+}
+
+.display {
+    display:none!important;
 }
 
 .logo {

@@ -1,5 +1,5 @@
 
-<div class="home-container" (window:scroll)="onWindowScroll()">
+<div (window:scroll)="onWindowScroll()">
   <div class="bg-image"></div>
 
     <nav [ngClass]="{'scrollNav': navScroll === true }">
@@ -32,10 +32,11 @@
         </ul> -->
     </nav>
 
-    <button (click)="verify()" class="d-button next btn-right"
+    <button (click)="verify()" class=" start d-button next btn-right"
         [ngClass]="{ 'disabled-btn': !selected || selected == 'tbd'}">
         START <br> LEARNING<br> <span>>></span>
     </button>
+  
 </div>
 
 <div class="menu-wrapper">
@@ -49,6 +50,10 @@
             </button>
         </div>
     </div>
+</div>
+
+<div class="scrollReveal" [ngClass]="{'display': navScroll === true }">
+  <span class="iconify" data-inline="false" data-icon="carbon:chevron-down" style="font-size: 32px;"></span>
 </div>
 
 <p class="createdBy">created by <a href="https://twitter.com/rynwstn"><b>@rynwstn</b></a></p>
