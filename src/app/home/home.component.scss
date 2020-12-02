@@ -63,7 +63,7 @@ ul {
 }
 
 .scrollNav {
-  background-color:black;
+  background: rgba(0, 0, 0, 0.5);
   z-index:1000;
   margin-top:0px;
   padding:15px 0px;
@@ -94,10 +94,7 @@ h2 span {
     width:100%;
     margin-top:15%;
     margin-left:30px;
-    z-index:-1;
     position:relative;
-    // align-items:center;
-    // justify-content:center;
 }
 
 .menu-container {
@@ -117,18 +114,11 @@ h2 span {
             // text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);
             font-size:3em;
             margin:0px;
-            line-height:95%;
+            line-height:90%;
             text-align:left;
             text-transform: uppercase;
             -webkit-text-stroke: 2px #C8AA6E;
             color:transparent;
-        }
-        p {
-            padding:0px;
-            margin:0px;
-            position:absolute;
-            bottom:-5px;
-            left:10px;
         }
     }
 }
@@ -141,13 +131,23 @@ h2 span {
 }
 
 .itemSelected {
-    h2 {color: #C8AA6E!important;}
+    h2 {
+        color: #C8AA6E!important;
+    }
+    p {
+        color: #C8AA6E!important;
+        font-size:1.5em;
+        // padding:5px 0px;
+        max-width:50%;
+        text-align:left;
+    }
 }
 
 .start {
     position:fixed;
     bottom:30px;
     right:30px;
+    z-index:3;
 }
 
 .scrollReveal {
@@ -166,7 +166,8 @@ h2 span {
 }
 
 .createdBy {
-    margin-top:20px;
+    padding:30px;
+    color:#C8AA6E;
     margin-bottom:0px;
 }
 
@@ -175,9 +176,6 @@ h2 span {
         .menu-item {
             h2 {
                 font-size:4em;
-            }
-            p {
-                bottom:0px;
             }
     }
 
@@ -189,9 +187,6 @@ h2 span {
         .menu-item {
             h2 {
                 font-size:14em;
-            }
-            p {
-                bottom:0px;
             }
     }
 }

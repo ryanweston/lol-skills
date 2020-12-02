@@ -47,6 +47,9 @@
                 [ngClass]="{'itemHover': hoverStatus[i] === true && selected !== item.id, itemSelected: selected === item.id }">
                 <h2>{{ item.id }}</h2>
                 <!-- <p *ngIf="!item.status">coming soon</p> -->
+                <p *ngIf="selected === item.id">
+                  Quiz yourself based on item descriptions. You’ll be given an item description and it’ll be up to you to pick the correct item based on the name and item image. 
+                </p> 
             </button>
         </div>
     </div>
@@ -56,4 +59,4 @@
   <span class="iconify" data-inline="false" data-icon="carbon:chevron-down" style="font-size: 32px;"></span>
 </div>
 
-<p class="createdBy">created by <a href="https://twitter.com/rynwstn"><b>@rynwstn</b></a></p>
+<p class="createdBy">DESIGNED & DEVELOPED BY <a href="https://twitter.com/rynwstn"><b>@RYNWSTN</b></a></p>
