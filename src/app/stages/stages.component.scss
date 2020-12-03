@@ -6,6 +6,7 @@
     width:100%;
     h2 {
         padding:0px 30px;
+        color:#C8AA6E;
     }
 }
 .stage-indicator {
@@ -42,7 +43,6 @@
     position:absolute;
     top:20px;
     left:30px;
-    // background-color:#C8AA6E;
 }
 .box {
     position:absolute; 
@@ -51,7 +51,6 @@
     width:150px;
     height:325px;
     transform:rotate(45deg);
-    // background-color:#C8AA6E;
     z-index:-2;
 }
 .stage h3 {
@@ -68,7 +67,7 @@
     color:black;
     -webkit-text-stroke: 1px #C8AA6E;
     margin-bottom: 0px;
-    margin-left: 20px;
+    font-weight:900;
 }
 .champions {
     background-color:black;
@@ -82,11 +81,11 @@
 }
 
 .champion {
-    // border: 1px solid #C8AA6E;
-    margin-right:5px;
+    // margin-right:5px;
     p {
         padding-left:5px;
         margin:0px;
+         color:#C8AA6E;
     }
 }
 .champion img {
@@ -190,16 +189,20 @@
     .stage-container {
         h2 {
             padding:0px;
-            font-weight:300;
+            font-weight:600;
             line-height:95%;
+        }
+        h4 {
+            color: #C8AA6E;
+            // text-decoration: underline;
+            font-weight:500;
         }
     }
     .champions-title {
         font-size:2.5em;
         line-height:100%;
-
-        margin-bottom: -20px;
-        margin-left: 20px;
+        margin-bottom: -5px;
+        // margin-left: 20px;
     }
     .champions {
         border:1px solid #C8AA6E;

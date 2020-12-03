@@ -4,12 +4,42 @@
     align-items:center;
     justify-content:center;
     background-color:#000000;
+    margin-top:70px;
+}
+
+.bg-title {
+    position:absolute;
+    top:20px;
+    left:40px;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    width:100vw;
+    height:100vh;
+    z-index:-1;
+    h1 {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                      supported by Chrome, Edge, Opera and Firefox */
+        margin:0px;
+        line-height:85%;
+        font-size:15vw;
+        font-weight:900;
+        -webkit-text-stroke: 2px #C8AA6E;
+        color:transparent;
+    }
+    opacity: 0.09;
 }
 
 .roles button {
-    width:33.3%;
-    padding:20px 30px;
-    border-left:3px solid transparent;
+   width:33.3%;
+   padding:20px 30px;
+   border-left:3px solid transparent;
    border-right:3px solid transparent;
    border-top:2px solid transparent;
    border-bottom:2px solid transparent;
@@ -29,13 +59,20 @@
     cursor: pointer;
 }
 
+
 .options {
+  color: #C8AA6E;
   margin-top:10px;
+  font-weight:600;
   input {
     background-color:black;
     border: 1px solid #C8AA6E;
   }
+  label {
+      margin-left:5px;
+  }
 }
+
 
 
 @media (max-width: 768px) {
@@ -63,4 +100,8 @@
     .roles button {
         width:auto;
     }
+    .bg-title {
+        display:flex;
+    }
+   
 }

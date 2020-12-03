@@ -38,6 +38,7 @@ a {
     }
 }
 
+
 .display {
     display:none!important;
 }
@@ -126,34 +127,6 @@ button {
     float:right;
 }
 
-.bg-title {
-    position:absolute;
-    top:20px;
-    left:40px;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    margin:auto;
-    width:100vw;
-    height:100vh;
-    z-index:-1;
-    h1 {
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome, Edge, Opera and Firefox */
-        margin:0px;
-        line-height:85%;
-        font-size:15vw;
-        -webkit-text-stroke: 1px #C8AA6E;
-        color:transparent;
-    }
-    opacity: $opacity;
-}
-
 .centered-container {
     width:100vw;
     height:100vh;
@@ -178,9 +151,6 @@ button {
         border:0px;
         padding:0px;
         text-align:left;
-    }
-    .bg-title {
-        display:flex;
     }
     h2 {
         font-size:2em;

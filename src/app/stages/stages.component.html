@@ -1,13 +1,14 @@
 <div class="centered-container">
+    <img class="logo" src="../assets/logo.svg">
     <div class="stage-container">
 
         <!-- ABSOLUTE POSITIONED CONTENT -->
-        <div class="stage-indicator">
+        <!-- <div class="stage-indicator">
             <img src="./assets/cock.svg">
             <div class="stage-number-container">
                 <h3 class="unselectable">{{stage + 1}}.</h3>
             </div>
-        </div>
+        </div> -->
 
         <div class="back-home">
             <a href="/">Back to home</a>
@@ -15,6 +16,7 @@
 
         <!-- STAGE CONTENT -->
         <div *ngIf="stage != (difficulty * 4)">
+            <h4>QUESTION #{{stage +1}}</h4>
             <h2 [innerHTML]="currentChampion?.skill"></h2>
 
             <h3 class="champions-title">Pick the correct champion</h3>
@@ -22,13 +24,13 @@
                 <div *ngFor="let champion of mainChampions.selected;" class="champion" style="display:inline-block">
                     <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"
                         [ngClass]="{ 'active': champion.name == user.selected }">
-                    <p *ngIf="config.champName">{{ champion.name }}</p>
+                    <!-- <p *ngIf="config.champName">{{ champion.name }}</p> -->
                 </div>
             </div>
             <br>
 
             <button (click)="verify()" class="next btn-right" [ngClass]="{ 'disabled-btn': !user.selected }"
-                [disabled]="!user.selected">NEXT<br>STAGE<br>
+                [disabled]="!user.selected">SUBMIT<br>ANSWER<br>
                 <span>>></span></button>
         </div>
 
