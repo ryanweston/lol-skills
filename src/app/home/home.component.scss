@@ -116,7 +116,7 @@ h2 span {
             line-height:90%;
             text-align:left;
             text-transform: uppercase;
-            -webkit-text-stroke: 2px #C8AA6E;
+            -webkit-text-stroke: 1px #C8AA6E;
             color:transparent;
         }
     }
@@ -124,8 +124,7 @@ h2 span {
 
 .itemHover {
     h2 {
-        // opacity:0.8;
-        -webkit-text-stroke: 4px #C8AA6E!important;
+        -webkit-text-stroke: 3px #C8AA6E!important;
     }
 }
 
@@ -191,15 +190,28 @@ h2 span {
     }
     .logo-box {
         img {
-            height:125px;
+            height:110px;
         }
     }
     ul {
         li {
-            font-size:1.2em;
+            font-size:1em;
         }
     }
     .start {
         font-size:3em;
+    }
+}
+
+@media (min-width: 1500px) {
+    .logo-box {
+        img {
+            height:120px;
+        }
+    }
+    ul {
+        li {
+            font-size:1.1em;
+        }
     }
 }
