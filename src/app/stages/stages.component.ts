@@ -42,10 +42,6 @@ export class StagesComponent {
 
         this.lane = lanes.lanes[this.role];
         this.findChampions();
-
-        // if (this.mainChampions.files[0]) {
-        //     console.log(this.mainChampions);
-        // }
     }
 
     shuffle(entry) {
@@ -73,10 +69,10 @@ export class StagesComponent {
             this.mainChampions.selected.push(entry[i]);
 
             //Assign skill used template into array
-            this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate]
+            this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate];
 
             //Load champion data into files
-            await this.loadChampion(i);
+            await this.loadChampionFile(i);
         }
 
         this.loading = false;
@@ -86,7 +82,7 @@ export class StagesComponent {
     }
 
 
-    async loadChampion(pos) {
+    async loadChampionFile(pos) {
         return new Promise((resolve, reject) => {
             this.http.get('assets/data/champion/' + this.mainChampions.selected[pos].name + '.json').toPromise().then(async (data) => {
                 await this.saveFile(pos, data);
@@ -132,11 +128,7 @@ export class StagesComponent {
         // Random key between 0-3, check if key path has already been used
         let num = Math.floor(Math.random() * 4);
 
-        // console.log("SKILL KEY: " + num)
-
-
         if (this.mainChampions.selected[champKey].skillsUsed[num] === false) {
-
             //Set skill history to used
             this.mainChampions.selected[champKey].skillsUsed[num] = true;
             //Set current champion skill
@@ -194,7 +186,5 @@ export class StagesComponent {
             const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.config.type } };
             this.router.navigate(['completed'], navigationExtras);
         }
-
-
     }
 }
