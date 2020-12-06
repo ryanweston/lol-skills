@@ -44,26 +44,15 @@ export class StagesComponent {
         this.findChampions();
     }
 
-    shuffle(entry) {
-        var length = entry.length, randomValue = 0, tempLastVal;
-
-        while (length--) {
-            randomValue = Math.floor(Math.random() * (length + 1));
-
-            tempLastVal = entry[length];
-            entry[length] = entry[randomValue];
-            entry[randomValue] = tempLastVal;
-        }
-
-        return entry;
-    }
-
     async findChampions() {
+        //Fill temp array with all champions in role
         let entry = lanes.lanes[this.role];
         console.log(entry);
-        // Randomise entry array
+
+        // Randomise entry array. Returns as randomised
         this.shuffle(entry);
 
+        //Takes first five champions from array and formats ready for use.
         for (let i = 0; i < this.difficulty; i++) {
             //Get random champions to length of difficulty
             this.mainChampions.selected.push(entry[i]);
@@ -81,6 +70,21 @@ export class StagesComponent {
         this.stageSkill();
     }
 
+    shuffle(entry) {
+        //Declare variables in single var pattern for readability
+        let length = entry.length, randomValue = 0, tempLastVal;
+
+        //  Implementation of the Durstenfeld shuffle algorithm
+        while (length--) {
+            randomValue = Math.floor(Math.random() * (length + 1));
+
+            tempLastVal = entry[length];
+            entry[length] = entry[randomValue];
+            entry[randomValue] = tempLastVal;
+        }
+
+        return entry;
+    }
 
     async loadChampionFile(pos) {
         return new Promise((resolve, reject) => {
@@ -134,6 +138,7 @@ export class StagesComponent {
             //Set current champion skill
             this.currentChampion.skill = this.mainChampions.files[champKey].data[this.currentChampion.name].spells[num].description;
             console.log(this.currentChampion.skill);
+            //Removs instances of champion names and replaces with censored text
             this.currentChampion.skill = this.currentChampion.skill.split(this.currentChampion.name).join("<span>Champion</span>");
 
             return num;
