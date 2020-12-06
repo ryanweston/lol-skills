@@ -1,8 +1,8 @@
 <div (window:scroll)="onWindowScroll()">
   <div class="bg-image"></div>
 
-  <nav [ngClass]="{'scrollNav': navScroll === true }">
-    <div class="box">
+  <nav [ngClass]="{'scroll-nav': navScroll === true }">
+    <div class="nav-section">
       <ul>
         <li><a href="https://www.notion.so/Learn-League-How-it-works-e5758edb8aee433baba28fe6a2e563ed">HOW IT
             WORKS</a></li>
@@ -10,10 +10,10 @@
         </li>
       </ul>
     </div>
-    <div class="box logo-box">
-      <img src="../assets/logo.svg">
+    <div class="nav-section logo-container">
+      <img class="logo" src="../assets/logo.svg">
     </div>
-    <div class="box">
+    <div class="nav-section">
       <ul>
         <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FEEDBACK</a></li>
         <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FAQ</a></li>
