@@ -42,6 +42,7 @@
         <div class="answered-container unactive" [ngClass]="{'answered': answer === 'correct' }">
             <div class="answered-bg"></div>
             <div class="popup">
+                <img src="../../assets/correct.svg"/>
                 <h1>CORRECT</h1>
             </div>
         </div>
@@ -50,9 +51,10 @@
         <div class="answered-container unactive" [ngClass]="{'answered': answer === 'false' }">
             #<div class="answered-bg"></div>
             <div class="popup">
+                <img src="../../assets/incorrect.svg"/>
                 <h1>INCORRECT</h1>
                 <div class="incorrect-answer">
-                    <p>The correct champion is: <span>{{currentChampion.name}}</span></p>
+                    <p>The correct champion is: <span> {{currentChampion.name}}</span></p>
                 </div>
             </div>
         </div>
