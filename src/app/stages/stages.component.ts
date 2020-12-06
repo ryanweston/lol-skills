@@ -169,7 +169,7 @@ export class StagesComponent {
             this.answer = "false";
             setTimeout(() => {
                 this.nextStage();
-            }, 1500);
+            }, 2000);
         }
     }
 
