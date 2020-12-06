@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({ templateUrl: 'stages.component.html', styleUrls: ['stages.component.scss'] })
 export class StagesComponent {
 
+    //Config variables
     role: string;
     difficulty: number;
     config;
@@ -52,19 +53,18 @@ export class StagesComponent {
     async findChampions() {
         //Fill temp array with all champions in role
         let entry = lanes.lanes[this.role];
-
+        console.log(entry);
         // Randomise entry array. Returns as randomised
         this.shuffle(entry);
 
         for (let i = 0; i < this.difficulty; i++) {
             //Takes first five champions from array and formats ready for use.
-            //NOTE: As I've pushed an object it's a reference to the entry array. Perhaps slowing down loading?
-            this.mainChampions.selected.push(entry[i]);
+            //NOTE: Stringified the object value to prevent storing as reference to entry array
+            this.mainChampions.selected.push(JSON.parse(JSON.stringify(entry[i])));
             
             //Push skill used template into array
             this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate];
 
-            // console.log(this.mainChampions.selected);
             //Load champion data into files
             await this.loadChampionFile(i);
             console.log('loaded file');
