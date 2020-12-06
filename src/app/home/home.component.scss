@@ -80,8 +80,9 @@ h2 span {
     display:flex;
     width:100%;
     margin-top:15%;
-    margin-left:40px;
+    padding-left:40px;
     position:relative;
+    box-sizing:border-box;
 }
 
 .menu-container {
