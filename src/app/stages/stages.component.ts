@@ -11,7 +11,6 @@ export class StagesComponent {
     difficulty: number;
     config;
 
-    skillTemplate = [false, false, false, false];
 
     stage = 0;
     lane = {}
@@ -19,8 +18,13 @@ export class StagesComponent {
     answer = "";
     score = 0;
 
+    // Answer/champion selected by user
     user = { selected: '' }
+    // Champion pool data
     mainChampions = { selected: [], files: [] };
+    // Template added to main selected champions to track questions asked.
+    skillTemplate = [false, false, false, false];
+    // Current question's champion
     currentChampion = { name: "", skill: "", keyRef: "" }
 
     constructor(private router: Router, private http: HttpClient) {
@@ -31,6 +35,7 @@ export class StagesComponent {
             this.router.navigate(['/']);
         }
 
+        // Assigns prop data
         this.role = navigation.extras.state.role;
         this.difficulty = navigation.extras.state.diffi;
         this.config = navigation.extras.state.config;
@@ -47,21 +52,22 @@ export class StagesComponent {
     async findChampions() {
         //Fill temp array with all champions in role
         let entry = lanes.lanes[this.role];
-        console.log(entry);
 
         // Randomise entry array. Returns as randomised
         this.shuffle(entry);
 
-        //Takes first five champions from array and formats ready for use.
         for (let i = 0; i < this.difficulty; i++) {
-            //Get random champions to length of difficulty
+            //Takes first five champions from array and formats ready for use.
+            //NOTE: As I've pushed an object it's a reference to the entry array. Perhaps slowing down loading?
             this.mainChampions.selected.push(entry[i]);
-
-            //Assign skill used template into array
+            
+            //Push skill used template into array
             this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate];
 
+            // console.log(this.mainChampions.selected);
             //Load champion data into files
             await this.loadChampionFile(i);
+            console.log('loaded file');
         }
 
         this.loading = false;
@@ -89,26 +95,12 @@ export class StagesComponent {
     async loadChampionFile(pos) {
         return new Promise((resolve, reject) => {
             this.http.get('assets/data/champion/' + this.mainChampions.selected[pos].name + '.json').toPromise().then(async (data) => {
-                await this.saveFile(pos, data);
-                resolve();
-            }).catch((err) => {
-                console.log(err);
-            });
-
+                this.mainChampions.files.push(data);
+                if (this.mainChampions.files[pos]) {
+                    resolve();
+                }
+            })
         });
-    }
-
-    saveFile(pos, data) {
-        return new Promise((resolve, reject) => {
-            this.mainChampions.files.push(data);
-            if (this.mainChampions.files[pos]) {
-                resolve();
-            } else {
-                setTimeout(() => {
-                    this.saveFile(pos, data), 300
-                })
-            }
-        })
     }
 
     async stageSkill() {
@@ -184,11 +176,11 @@ export class StagesComponent {
 
         this.stage++;
 
+        // Check's if all questions have been answered. Difficulty * number of questions per champion
         if (this.stage != (this.difficulty * 4)) {
             this.stageSkill();
-
         } else {
-            const navigationExtras: NavigationExtras = { state: { score: 15, diffi: 6, type: this.config.type } };
+            const navigationExtras: NavigationExtras = { state: { score: this.score, diffi: this.difficulty, type: this.config.type } };
             this.router.navigate(['completed'], navigationExtras);
         }
     }

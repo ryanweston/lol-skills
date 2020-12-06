@@ -9,7 +9,7 @@ export class SetupComponent {
     hoverStatus = false;
     stage = 0;
 
-    selected = { config: { type: '', champName: true }, role: '', difficulty: 2 }
+    selected = { config: { type: '', champName: true }, role: '', difficulty: 6 }
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
@@ -40,7 +40,7 @@ export class SetupComponent {
     }
 
     begin() {
-        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: 6, config: this.selected.config } };
+        const navigationExtras: NavigationExtras = { state: { role: this.selected.role, diffi: this.selected.difficulty, config: this.selected.config } };
         this.router.navigate(['begin'], navigationExtras);
     }
 }
