@@ -200,7 +200,189 @@
             {
                 "name": "Urgot",
                 "6": "Urgot"
+            },
+
+            {
+                "name": "Fizz",
+                "29": "Fizz"
+            },
+            {
+                "name": "Ekko",
+                "77": "Ekko"
+            },
+            {
+                "name": "Galio",
+                "6": "Galio"
+            },
+            {
+                "name": "Zed",
+                "29": "Zed"
+            },
+            {
+                "name": "Viktor",
+                "77": "Viktor"
+            },
+            {
+                "name": "Akali",
+                "6": "Akali"
+            },
+            {
+                "name": "Morgana",
+                "29": "Morgana"
+            },
+            {
+                "name": "Sylas",
+                "77": "Sylas"
+            },
+            {
+                "name": "Zoe",
+                "6": "Zoe"
+            },
+            {
+                "name": "Malphite",
+                "29": "Malphite"
+            },
+            {
+                "name": "Katarina",
+                "77": "Katarina"
+            },
+            {
+                "name": "Malzahar",
+                "6": "Malzahar"
+            },
+            {
+                "name": "Annie",
+                "29": "Annie"
+            },
+            {
+                "name": "Kayle",
+                "77": "Kayle"
+            },
+            {
+                "name": "LeBlanc",
+                "6": "LeBlanc"
+            },
+            {
+                "name": "Talon",
+                "29": "Talon"
+            },
+            {
+                "name": "TwistedFate",
+                "77": "TwistedFate"
+            },
+            {
+                "name": "Cassiopeia",
+                "6": "Cassiopeia"
+            },
+            {
+                "name": "Orianna",
+                "29": "Orianna"
+            },
+            {
+                "name": "Nunu",
+                "77": "Nunu"
+            },
+            {
+                "name": "Xerath",
+                "6": "Xerath"
+            },
+            {
+                "name": "Ahri",
+                "6": "Ahri"
+            },
+            {
+                "name": "Swain",
+                "77": "Swain"
+            },
+            {
+                "name": "Rumble",
+                "6": "Rumble"
+            },
+            {
+                "name": "Brand",
+                "6": "Brand"
+            },
+            {
+                "name": "Kassadin",
+                "77": "Kassadin"
+            },
+            {
+                "name": "Diana",
+                "6": "Diana"
+            },
+            {
+                "name": "AurelionSol",
+                "6": "AurelionSol"
+            },
+            {
+                "name": "Lucian",
+                "77": "Lucian"
+            },
+            {
+                "name": "Vladamir",
+                "6": "Vladamir"
+            },
+            {
+                "name": "Jayce",
+                "6": "Jayce"
+            },
+            {
+                "name": "Neeko",
+                "77": "Lucian"
+            },
+            {
+                "name": "Yasuo",
+                "6": "Vladamir"
+            },
+            {
+                "name": "Corki",
+                "6": "Corki"
+            },
+            {
+                "name": "Lissandra",
+                "77": "Lissandra"
+            },
+            {
+                "name": "Yone",
+                "6": "Yone"
+            },
+            {
+                "name": "Anivia",
+                "6": "Anivia"
+            },
+            {
+                "name": "Lux",
+                "77": "Lux"
+            },
+            {
+                "name": "Syndra",
+                "6": "Syndra"
+            },
+            {
+                "name": "Qiyana",
+                "6": "Qiyana"
+            },
+            {
+                "name": "Azir",
+                "77": "Azir"
+            },
+            {
+                "name": "Ryze",
+                "6": "Ryze"
+            },
+            {
+                "name": "Nocturne",
+                "6": "Nocturne"
+            },
+            {
+                "name": "Veigar",
+                "6": "Veigar"
+            },
+            {
+                "name": "Ziggs",
+                "6": "Ziggs"
             }
+            
         ]
     }
 }
