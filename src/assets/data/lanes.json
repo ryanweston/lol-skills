@@ -383,6 +383,104 @@
                 "6": "Ziggs"
             }
             
+        ],
+        "bot": [    
+            {
+                "name": "Jhin",
+                "6": "Jhin"
+            },
+            {
+                "name": "Samira",
+                "6": "Samira"
+            },
+            {
+                "name": "Ezreal",
+                "6": "Ezreal"
+            },
+            {
+                "name": "KaiSai",
+                "6": "KaiSai"
+            },
+            {
+                "name": "MissFortune",
+                "6": "MissFortune"
+            },
+            {
+                "name": "Vayne",
+                "6": "Vayne"
+            },
+            {
+                "name": "Swain",
+                "6": "Swain"
+            },
+            {
+                "name": "Lucian",
+                "6": "Lucian"
+            },
+            {
+                "name": "Ashe",
+                "6": "Ashe"
+            }, 
+            {
+                "name": "Tristana",
+                "6": "Tristana"
+            },
+            {
+                "name": "Draven",
+                "6": "Draven"
+            },
+            {
+                "name": "Senna",
+                "6": "Senna"
+            },
+            {
+                "name": "Caitlyn",
+                "6": "Caitlyn"
+            },
+            {
+                "name": "Kalista",
+                "6": "Kalista"
+            },
+            {
+                "name": "Varus",
+                "6": "Varus"
+            },
+            {
+                "name": "Aphelios",
+                "6": "Aphelios"
+            },
+            {
+                "name": "Jinx",
+                "6": "Jinx"
+            },
+            {
+                "name": "Sivir",
+                "6": "Sivir"
+            },
+            {
+                "name": "KogMaw",
+                "6": "KogMaw"
+            },
+            {
+                "name": "Twitch",
+                "6": "Twitch"
+            },
+            {
+                "name": "Xayah",
+                "6": "Xayah"
+            }
+        ], 
+        "supp": [
+            {
+                "name": "Leona",
+                "6": "Leona"
+            }
+        ], 
+        "jngl": [
+            {
+                "name": "Kayn",
+                "6": "Kayn"
+            }
         ]
     }
 }
