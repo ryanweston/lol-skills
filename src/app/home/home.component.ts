@@ -11,8 +11,8 @@ export class HomeComponent {
 
     hoverStatus = [];
     navScroll = false;
-    data = [{ id: 'skills', status: true }, { id: 'champions', status: false }, { id: 'objectives', status: false }, { id: 'counters', status: false }, { id: 'items', status: false }];
-    selected = '';
+    data = [{ id: 'skills', status: true, description:'Quiz yourself based on champion skill descriptions. You\'ll be given 6 champions and you have to pick the champion the skill belongs too.'}, { id: 'champions', status: false, description:'Quiz yourself based on champion skill descriptions. You\'ll be given 6 champions and you have to pick the champion the skill belongs too.' }, { id: 'objectives', status: false, description:'COMING SOON' }, { id: 'counters', status: false, description:'COMING SOON' }, { id: 'items', status: false, description:'Quiz yourself based on champion skill descriptions. You\'ll be given 6 champions and you have to pick the champion the skill belongs too.' }];
+    selected = { id: '', status: null};
 
 
 
@@ -24,17 +24,19 @@ export class HomeComponent {
     }
 
     verify() {
-        if (this.selected && this.selected !== 'tbd') {
+        if (this.selected.status !== false ) {
             const navigationExtras: NavigationExtras = { state: { type: this.selected } };
             this.router.navigate(['setup'], navigationExtras);
         }
     }
 
     select(index) {
+        this.selected.id = this.data[index].id;
+
         if (this.data[index].status) {
-            this.selected = this.data[index].id;
+            this.selected.status = true;
         } else {
-            this.selected = 'tbd';
+            this.selected.status = false;
         }
     }
 

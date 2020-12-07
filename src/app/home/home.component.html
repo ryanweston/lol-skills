@@ -19,21 +19,15 @@
         <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931" target=”_blank”>FAQ</a></li>
       </ul>
     </div>
-
-    <!-- <ul>
-            <li><a href="https://www.notion.so/Learn-League-How-it-works-e5758edb8aee433baba28fe6a2e563ed">HOW IT
-                    WORKS</a></li>
-            <li><a href="https://www.notion.so/Learn-League-The-Roadmap-e77641b970204192be6f7b4e96317ab5">WHAT IS LL?</a>
-            </li>
-            <img src="../assets/logo.svg">
-            <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FEEDBACK</a></li>
-            <li><a href="https://www.notion.so/Learn-League-FAQ-bc5000aae9ef4cf4b3d23563454e5931">FAQ</a></li>
-        </ul> -->
   </nav>
 
+
   <button (click)="verify()" class=" start d-button next btn-right"
-    [ngClass]="{ 'disabled-btn': !selected || selected == 'tbd'}">
-    START <br> LEARNING<br> <span>>></span>
+    [ngClass]="{ 'disabled-btn': !selected.status || selected.status == false}">
+    <div *ngIf="selected.status === false; else learn">COMING <br> SOON 2021</div>
+    <ng-template #learn>
+     <div>START<br> LEARNING<br> <span>>></span></div>
+    </ng-template>
   </button>
 
 </div>
@@ -44,16 +38,18 @@
       <h2 class="title">Choose an area to learn more</h2>
       <button *ngFor="let item of data; let i = index" (mouseenter)="mouseEnter(i)" (mouseleave)="mouseLeave(i)"
         (click)="select(i)" class="menu-item"
-        [ngClass]="{'itemHover': hoverStatus[i] === true && selected !== item.id, itemSelected: selected === item.id }">
+        [ngClass]="{'itemHover': hoverStatus[i] === true && selected.id !== item.id, itemSelected: selected.id === item.id }">
         <h2>{{ item.id }}</h2>
         <!-- <p *ngIf="!item.status">coming soon</p> -->
-        <p *ngIf="selected === item.id">
-          <b>How to play:   </b> Quiz yourself based on champion skill descriptions. You'll be given 6 champions and you have to pick the champion the skill belongs too.
+        <p *ngIf="selected.id === item.id">
+          <b>How to play </b><br>
+          {{ item.description }}
         </p>
       </button>
     </div>
   </div>
 </div>
+
 
 <div class="scrollReveal" [ngClass]="{'display': navScroll === true }">
   <span class="iconify" data-inline="false" data-icon="carbon:chevron-down" style="font-size: 32px;"></span>
