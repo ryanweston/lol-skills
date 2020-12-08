@@ -40,7 +40,6 @@
         (click)="select(i)" class="menu-item"
         [ngClass]="{'itemHover': hoverStatus[i] === true && selected.id !== item.id, itemSelected: selected.id === item.id }">
         <h2>{{ item.id }}</h2>
-        <!-- <p *ngIf="!item.status">coming soon</p> -->
         <p *ngIf="selected.id === item.id">
           <b>HOW TO PLAY</b><br>
           {{ item.description }}
