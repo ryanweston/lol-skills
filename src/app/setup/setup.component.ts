@@ -8,8 +8,7 @@ export class SetupComponent {
 
     hoverStatus = false;
     stage = 0;
-
-    selected = { config: { type: '', champName: true }, role: '', difficulty: 6 }
+    selected = { config: { type: '', champName: false }, role: '', difficulty: 6 }
 
     constructor(private router: Router) {
         const navigation = this.router.getCurrentNavigation();
@@ -26,9 +25,11 @@ export class SetupComponent {
         // this.selected.difficulty: Number;
         console.log(this.selected);
     }
+    
     selectRole(role) {
         this.selected.role = role;
         console.log(this.selected);
+
     }
     selectDifficulty(diff) {
         this.selected.difficulty = diff;

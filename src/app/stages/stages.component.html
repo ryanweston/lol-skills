@@ -6,14 +6,6 @@
 
     <div class="stage-container">
 
-        <!-- ABSOLUTE POSITIONED CONTENT -->
-        <!-- <div class="stage-indicator">
-            <img src="./assets/cock.svg">
-            <div class="stage-number-container">
-                <h3 class="unselectable">{{stage + 1}}.</h3>
-            </div>
-        </div> -->
-
         <div class="back-home">
             <a href="/"><span class="iconify" data-inline="false" data-icon="bi:question-circle" style="color: #c8aa6e; font-size: 30px;"></span></a>
         </div>
@@ -28,7 +20,7 @@
                 <div *ngFor="let champion of mainChampions.selected;" class="champion" style="display:inline-block">
                     <img (click)="user.selected = champion.name" src="../assets/data/img/{{champion?.name}}.png"
                         [ngClass]="{ 'active': champion.name == user.selected }">
-                    <!-- <p *ngIf="config.champName">{{ champion.name }}</p> -->
+                    <p *ngIf="config.champName">{{ champion.name }}</p>
                 </div>
             </div>
             <br>
