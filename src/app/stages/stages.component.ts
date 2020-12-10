@@ -12,7 +12,6 @@ export class StagesComponent {
     difficulty: number;
     config;
 
-
     stage = 0;
     lane = {}
     loading = false;
@@ -51,9 +50,9 @@ export class StagesComponent {
     }
 
     async findChampions() {
-        //Fill temp array with all champions in role
+        //Fill temp array with all champions in role. TODO: rename lanes json object
         let entry = lanes.lanes[this.role];
-        console.log(entry);
+
         // Randomise entry array. Returns as randomised
         this.shuffle(entry);
 
@@ -61,7 +60,7 @@ export class StagesComponent {
             //Takes first five champions from array and formats ready for use.
             //NOTE: Stringified the object value to prevent storing as reference to entry array
             this.mainChampions.selected.push(JSON.parse(JSON.stringify(entry[i])));
-            
+
             //Push skill used template into array
             this.mainChampions.selected[i].skillsUsed = [...this.skillTemplate];
 
@@ -93,14 +92,8 @@ export class StagesComponent {
     }
 
     async loadChampionFile(pos) {
-        return new Promise((resolve, reject) => {
-            this.http.get('assets/data/champion/' + this.mainChampions.selected[pos].name + '.json').toPromise().then(async (data) => {
-                this.mainChampions.files.push(data);
-                if (this.mainChampions.files[pos]) {
-                    resolve();
-                }
-            })
-        });
+        let data = await this.http.get('assets/data/champion/' + this.mainChampions.selected[pos].name + '.json').toPromise();
+        this.mainChampions.files.push(data);
     }
 
     async stageSkill() {
